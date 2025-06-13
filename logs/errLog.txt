@@ -1,0 +1,179 @@
+2025-04-28 03:07:19 - 221ef0a8-b952-4145-8564-5a21fa9dd0fb - Error: Not allowed by CORS
+2025-04-28 03:10:48 - 9063ad23-b67d-47ab-8ea9-217456e76c39 - Error: Not allowed by CORS
+2025-04-28 03:10:48 - 6edd16ca-5ec5-4c75-87fb-ff7d4ae9e6ae - Error: Not allowed by CORS
+2025-05-05 09:38:18 - 7bae97e5-524d-49c3-aa4d-e96070ebcfbd - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 09:38:53 - 47a1b7d8-65a5-4650-b208-d38000c1dee3 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 09:39:54 - fc3a36a0-a5b5-40db-a961-8bc9eb87bd45 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 09:42:04 - 032eee37-6d19-4716-9367-d38fdf7927ce - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 09:45:42 - 3c3ec4e6-1ee6-4214-80a4-88a981f74f9c - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 09:48:00 - a7601f8c-4d47-4537-8de0-294341b503c2 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 09:48:50 - 2b07d9fe-f4b0-454f-a9f6-102cc7469604 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 09:50:15 - aebb9dc1-06a4-4b70-9e07-93f3b517610e - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 09:50:45 - 9dc41b47-b533-4f42-bb14-a901dbe1f1cd - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 09:53:11 - 0c370358-6bd0-418d-a33c-89bad52154e0 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 09:57:32 - 5ef2dbbd-1599-43fd-8e8b-cde297b8656e - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 09:59:10 - daab7de3-ec70-4ab1-9e5d-738870d90328 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 17:06:50 - 5bae31fd-9007-4618-bc5f-f22a0fdd714f - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 17:08:30 - 5559513b-eecd-482f-9e3e-0d6bad6325f6 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 17:09:29 - 95e14bf8-a37c-43e1-9c77-8be81409fc8c - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 17:10:54 - 423c703d-4bb1-4c49-b045-8f82baf6d03f - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 17:11:55 - 85524d12-f3da-40a3-ae1d-c9d8f5269423 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 17:16:18 - a8241644-3242-43d1-9174-c2f44bb95a62 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 17:18:35 - 5b27f3a8-7157-419c-9992-ed3b2795d08b - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-05 17:43:24 - 9f8b73cc-3acf-4298-844f-f96cbfa6463b - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-08 03:05:45 - 7c1ef123-7bd3-4970-b39d-4a634268268a - Error: Cannot set headers after they are sent to the client
+2025-05-16 16:30:05 - 9c494046-86af-40ab-bf8c-7d1078c72d06 - Error: Cannot set headers after they are sent to the client
+2025-05-17 21:24:39 - f2fa749f-a190-4e30-927e-ca7ba0307b52 - ReferenceError: path is not defined
+2025-05-18 03:21:13 - 43126730-e1ed-4ef9-9598-775748ce818f - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-20 22:34:28 - fcbbbd6a-6ef5-496c-9e21-972caae87088 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-20 22:34:38 - 78bc97fb-e50b-4a34-b34d-fa7352651277 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-20 22:36:19 - 7be9e445-eff7-4983-9d07-28bb4d3e234f - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-20 22:36:44 - 0d11ee52-6931-4fa3-8a5a-2ad12b5bc639 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-20 22:36:47 - a6f378d7-cc87-47af-82e5-0096bf7d303f - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-20 22:38:29 - 1debe481-1e28-4ef0-b8da-affa209ac592 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-20 22:39:26 - e031c1cd-12c0-4d92-b48b-0011dc184aa4 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-20 22:40:51 - 05377a23-db90-4d49-b953-4d807f5d095d - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-20 22:42:29 - 6c805780-d36e-4973-aba0-5605b6a5a1c2 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-20 22:50:41 - a5ccb6b3-67bb-4f3e-8748-b1f428e5bf7a - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-20 22:52:53 - d326da0f-cb16-4f47-9bef-8ee1feba6a80 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-20 22:55:45 - 8c0deb97-a997-493d-81be-e1c82430c600 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-20 23:16:46 - d63e4015-49dc-47d0-afa9-668e38fd5093 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-05-20 23:17:41 - 95242e63-d55f-4617-ac69-22d3f0ed6413 - TypeError: Cannot destructure property 'user' of 'req.body' as it is undefined.
+2025-06-13 11:54:45 - eced11b1-e83c-4c4b-a0ce-d9508f91bbfc - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:54:45 - 83b35d3c-38cd-48ef-a9be-bb5c27d281c3 - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:54:46 - 6b7dfc28-8e03-4dbf-9c67-eacded606234 - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:55:37 - 6fc59cb7-3bf0-4beb-8273-ff410979961b - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:55:37 - 65cb205c-4929-4181-8eca-9e60c8ca08d7 - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:55:37 - 71cf54d1-a877-4124-a63f-a992234bb9d1 - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:55:39 - ca7d6449-2b2d-474c-b75f-42e6460bd7af - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:55:39 - a2db78ec-c13b-4834-a358-35770b36761c - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:55:39 - 595b0d72-ce26-4a24-a324-ab27b0ca013a - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:55:40 - 0a01a697-ebde-4658-bd93-173df9a73d62 - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:55:40 - 6b63aa89-e656-4c16-89ad-d05a860eabb6 - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:55:40 - 05b7a581-2efc-43dc-a29d-ec7d968d68ad - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:55:41 - 011d3350-e49a-441b-b44e-843e7e894a07 - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:55:41 - b5b93cd0-e9c8-43b5-ace4-c95206661454 - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:55:41 - 9f0169d2-ac42-4a8b-a47a-f96c08e7cfd7 - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:57:20 - 4cbed782-a24e-4df2-a26d-bea2989c3aad - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:57:20 - b81ef153-e7ec-4088-b570-7b98a3a5ae26 - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 11:57:20 - 60eb9d14-7f25-479b-ab2f-dbe6380be5d0 - TypeError: Cannot read properties of undefined (reading 'jwt')
+2025-06-13 12:46:41 - df28174f-c13e-4ab2-be17-08aaaa842a7c - TypeError: req.status is not a function
+2025-06-13 12:46:41 - 3b3b83b7-814c-4e06-8300-de10fbfe2f85 - TypeError: req.status is not a function
+2025-06-13 12:47:10 - 8839cef6-c3a7-492c-87b6-368590320a66 - TypeError: req.status is not a function
+2025-06-13 12:47:10 - 5494d1c0-8839-495a-a54d-c649a4ddbda4 - TypeError: req.status is not a function
+2025-06-13 12:47:12 - d4c05b93-44a7-4b9b-804c-7c34db74f9c8 - TypeError: req.status is not a function
+2025-06-13 12:47:12 - 72be340d-0c7d-4cd4-bc37-2e5fb680ce8a - TypeError: req.status is not a function
+2025-06-13 12:47:13 - 4613356a-2d73-4ece-a7f2-f7e7bc3ea642 - TypeError: req.status is not a function
+2025-06-13 12:47:13 - 646b42bc-cec7-4643-8931-1c3014c83d4f - TypeError: req.status is not a function
+2025-06-13 12:47:47 - a6302fdc-ac22-4cc7-b1e8-aeffdefe0e7c - TypeError: Cannot read properties of undefined (reading 'userInfo')
+2025-06-13 12:47:47 - 40e296b3-867e-490d-ad46-0817f2eff5eb - Error: Cannot set headers after they are sent to the client
+2025-06-13 14:18:13 - a1ead1f3-1ad9-4601-a8ff-0f83355c28a6 - Error: read ECONNRESET
+2025-06-13 14:29:26 - 23a7896f-19e9-4302-aab3-a9dc6ece237b - Error: Can't set headers after they are sent.
+2025-06-13 15:08:25 - d9058176-603d-4e1d-ae2b-1d6acf4e8368 - Error: Could not find matching close tag for "<%-".
+2025-06-13 15:12:16 - 478c5a6e-f3a4-4c15-a615-90a997bcb4d1 - ReferenceError: D:\Web Projects\Test Node_JS\views\users.ejs:149
+    147|                     </svg></div>
+    148|                 <div class="card__title">
+ >> 149|                     <%= obj.username%>
+    150|                 </div>
+    151|                 <div class="card__subtitle">Web Development</div>
+    152|                 <div class="card__wrapper">
+
+obj is not defined
+2025-06-13 15:12:16 - 531c0932-5b05-460d-9fa3-125eae915ae3 - ReferenceError: D:\Web Projects\Test Node_JS\views\users.ejs:149
+    147|                     </svg></div>
+    148|                 <div class="card__title">
+ >> 149|                     <%= obj.username%>
+    150|                 </div>
+    151|                 <div class="card__subtitle">Web Development</div>
+    152|                 <div class="card__wrapper">
+
+obj is not defined
+2025-06-13 15:28:58 - d867afbb-12d6-4322-83a1-3a42ce789a34 - Error: read ECONNRESET
+2025-06-13 15:29:05 - 8bb20b26-7413-4ea8-aac3-13728b35dcbb - MongoServerSelectionError: connection <monitor> to 159.41.76.21:27017 closed
+2025-06-13 15:53:49 - 1b1f73b8-c11b-4579-a179-d5a7aeb7996f - SyntaxError: Unexpected token ')' in D:\Web Projects\Test Node_JS\views\users.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-06-13 15:54:29 - e7bfd742-48b8-405c-965d-7d6fb6eba0e1 - SyntaxError: Unexpected token 'catch' in D:\Web Projects\Test Node_JS\views\users.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-06-13 15:55:08 - 063a3514-6a09-4d3c-ab82-7997b9858aed - SyntaxError: Unexpected token 'catch' in D:\Web Projects\Test Node_JS\views\users.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-06-13 15:55:13 - 1c644e31-3f4a-4fbd-8fbe-51fec3d9bdaf - SyntaxError: Unexpected token 'catch' in D:\Web Projects\Test Node_JS\views\users.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-06-13 15:55:21 - 2547d8c4-ba20-4842-a2e8-6e921c96782f - SyntaxError: Unexpected token 'catch' in D:\Web Projects\Test Node_JS\views\users.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-06-13 15:56:22 - f6ee4d97-a69e-4325-85f6-e2c334f605e5 - SyntaxError: Unexpected token 'catch' in D:\Web Projects\Test Node_JS\views\users.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-06-13 15:56:32 - 77d1eebf-d2b6-4dfb-aa12-9171b4cccef2 - SyntaxError: Unexpected token 'catch' in D:\Web Projects\Test Node_JS\views\users.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-06-13 16:21:59 - 585b6af9-f5c0-4bec-8904-9bfd3e36bf6e - TypeError: Cannot read properties of undefined (reading 'userInfo')
+2025-06-13 16:22:00 - 13eb0268-5270-4f8f-988e-1596543d1e49 - TypeError: Cannot read properties of undefined (reading 'userInfo')
+2025-06-13 16:22:22 - d0e19a19-45ae-4bab-92e2-f0764e67ac77 - TypeError: D:\Web Projects\Test Node_JS\views\users.ejs:108
+    106|                 </div>
+    107|                 <div class="card__subtitle">
+ >> 108|                     <% Object.keys(user.roles).forEach((role)=> { %>
+    109|                         <span>
+    110|                             <%= role%>
+    111|                         </span>
+
+Cannot convert undefined or null to object
+2025-06-13 16:50:50 - c139fb40-1731-4180-9c65-dc2ecadb7978 - TypeError: D:\Web Projects\Test Node_JS\views\users.ejs:109
+    107|                 <!-- loop on User roles -->
+    108|                 <div class="card__subtitle">
+ >> 109|                     <%- user.roles.map(role=> `<span class="role">${role}</span>`).join(' ') %>
+    110|                 </div>
+    111|             </div>
+    112|         </div>
+
+user.roles.map is not a function
+2025-06-13 16:51:49 - c83f8fbf-932e-409d-8fca-c4b65d2897a9 - TypeError: D:\Web Projects\Test Node_JS\views\users.ejs:109
+    107|                 <!-- loop on User roles -->
+    108|                 <div class="card__subtitle">
+ >> 109|                     <% user.roles.map(role=> `<span class="role">${role}</span>`).join(' ') %>
+    110|                 </div>
+    111|             </div>
+    112|         </div>
+
+user.roles.map is not a function
+2025-06-13 16:52:00 - 03895f73-f382-453e-886b-41d955f4571f - TypeError: D:\Web Projects\Test Node_JS\views\users.ejs:109
+    107|                 <!-- loop on User roles -->
+    108|                 <div class="card__subtitle">
+ >> 109|                     <%= user.roles.map(role=> `<span class="role">${role}</span>`).join(' ') %>
+    110|                 </div>
+    111|             </div>
+    112|         </div>
+
+user.roles.map is not a function
+2025-06-13 17:14:10 - e57e2c4b-7e45-4b2a-ad53-5cbab8089749 - ReferenceError: D:\Web Projects\Test Node_JS\views\users.ejs:109
+    107|                 <!-- loop on User roles -->
+    108|                 <div class="card__subtitle">
+ >> 109|                     <% userRolesArr.forEach((role)=> {%>
+    110|                         <span>
+    111|                             <%= role%>
+    112|                         </span>
+
+userRolesArr is not defined
+2025-06-13 19:16:02 - 8bdbadfe-5b99-4508-b91a-cfd2aae045f0 - Error: ENOENT: no such file or directory, stat 'D:\Web Projects\Test Node_JS\views\404.html'
+2025-06-13 19:20:20 - 05c0cf84-097c-45ff-923f-02b1a07929c3 - Error: ENOENT: no such file or directory, stat 'D:\Web Projects\Test Node_JS\views\404.html'
+2025-06-13 19:23:19 - 5a4d4c58-a648-4083-a62f-14363fecb8ee - Error: ENOENT: no such file or directory, stat 'D:\Web Projects\Test Node_JS\views\404.html'
+2025-06-13 19:24:06 - e892562a-edec-4a45-bb94-993e3b07518d - Error: ENOENT: no such file or directory, stat 'D:\Web Projects\Test Node_JS\views\404.html'
+2025-06-13 19:24:07 - f9c61c64-d76b-47e7-bdf6-851bac6a0f09 - Error: ENOENT: no such file or directory, stat 'D:\Web Projects\Test Node_JS\views\404.html'

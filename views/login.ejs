@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Login</title>
+</head>
+
+<body>
+    <%- include('./components/header.ejs')%>
+        <div class="login_form_div">
+            <form action="/login" method="post">
+                <div class="username_div">
+                    <label for="username">Username</label>
+                    <input type="text" name="user" id="username" placeholder="Username" required>
+                </div>
+                <div class="pass_div">
+                    <label for="password">Password</label>
+                    <input type="password" name="pwd" id="password" placeholder="Password" required>
+                </div>
+                <div class="submit_div">
+                    <input type="submit" value="Login">
+                </div>
+            </form>
+        </div>
+        <%- include('./components/footer.ejs')%>
+            <script>
+                const username = document.getElementById('username');
+                const password = document.getElementById('password');
+                const form = document.querySelector('form');
+
+                form.addEventListener("submit", async (e) => {
+                    const response = await fetch("http://localhost:3500/login", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify({ user: username.value, pwd: password.value })
+                    });
+                    const data = await response.json();
+                    if (response.ok) {
+                        localStorage.setItem("accessToken", data.accessToken);
+                    } else {
+                        alert(data.message);
+                    }
+                })
+            </script>
+</body>
+
+</html>
