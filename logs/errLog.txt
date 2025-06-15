@@ -177,3 +177,152 @@ userRolesArr is not defined
 2025-06-13 19:23:19 - 5a4d4c58-a648-4083-a62f-14363fecb8ee - Error: ENOENT: no such file or directory, stat 'D:\Web Projects\Test Node_JS\views\404.html'
 2025-06-13 19:24:06 - e892562a-edec-4a45-bb94-993e3b07518d - Error: ENOENT: no such file or directory, stat 'D:\Web Projects\Test Node_JS\views\404.html'
 2025-06-13 19:24:07 - f9c61c64-d76b-47e7-bdf6-851bac6a0f09 - Error: ENOENT: no such file or directory, stat 'D:\Web Projects\Test Node_JS\views\404.html'
+2025-06-15 15:02:38 - cac51209-bc18-4c32-bad1-d90e075425aa - TypeError: Cannot read properties of undefined (reading 'roles')
+2025-06-15 15:03:52 - ab8d4ca6-bf06-4e6c-9b8e-0c91338a6af2 - TypeError: D:\Web Projects\Test Node_JS\views\index.ejs:109
+    107|                     </div>
+    108|                     <div class="card__title">
+ >> 109|                         <%= user.username%>
+    110|                     </div>
+    111|                     <!-- loop on User roles -->
+    112|                     <div class="card__subtitle">
+
+Cannot read properties of undefined (reading 'username')
+2025-06-15 15:05:25 - d2c8032f-ea79-4fb7-9e91-ccc5d09ca9bb - ReferenceError: D:\Web Projects\Test Node_JS\views\index.ejs:109
+    107|                     </div>
+    108|                     <div class="card__title">
+ >> 109|                         <%= user.username%>
+    110|                     </div>
+    111|                     <!-- loop on User roles -->
+    112|                     <div class="card__subtitle">
+
+user is not defined
+2025-06-15 15:07:29 - fe4ab021-c4d8-4d00-a0b3-18cbbfdae39d - ReferenceError: D:\Web Projects\Test Node_JS\views\index.ejs:109
+    107|                     </div>
+    108|                     <div class="card__title">
+ >> 109|                         <% if(user){%>
+    110|                             <%= user.username%>
+    111|                                 <% }%>
+    112|                     </div>
+
+user is not defined
+2025-06-15 15:07:37 - 7b8f6693-cc6a-40bd-a9e8-4d673d5f6afd - ReferenceError: D:\Web Projects\Test Node_JS\views\index.ejs:109
+    107|                     </div>
+    108|                     <div class="card__title">
+ >> 109|                         <% if(user){%>
+    110|                             <%= user.username%>
+    111|                                 <% }%>
+    112|                     </div>
+
+user is not defined
+2025-06-15 15:33:03 - 1b65a42a-63a8-4ffe-9dfc-be4c2e8ffa48 - ReferenceError: D:\Web Projects\Test Node_JS\views\index.ejs:109
+    107|                     </div>
+    108|                     <div class="card__title">
+ >> 109|                         <% if(!user){%>
+    110|                             <%= user.username%>
+    111|                                 <% }%>
+    112|                     </div>
+
+user is not defined
+2025-06-15 15:33:53 - 649b9130-c0c2-4c19-afe5-1eeb05cba972 - ReferenceError: D:\Web Projects\Test Node_JS\views\index.ejs:109
+    107|                     </div>
+    108|                     <div class="card__title">
+ >> 109|                         <% if(!user){%>
+    110|                             <!-- <%= user.username%> -->
+    111|                             <h1 style="color: red; font-size: 2rem;">User not found</h1>
+    112|                             <% }%>
+
+user is not defined
+2025-06-15 15:35:35 - 6bf138b3-d98c-4078-9f09-d6582a38a14a - TypeError: D:\Web Projects\Test Node_JS\views\index.ejs:110
+    108|                     <div class="card__title">
+    109|                         <% if(!user){%>
+ >> 110|                             <!-- <%= user.username%> -->
+    111|                             <h1 style="color: red; font-size: 2rem;">User not found</h1>
+    112|                             <% }%>
+    113|                     </div>
+
+Cannot read properties of null (reading 'username')
+2025-06-15 15:37:48 - 2b88dee6-58a3-456d-9aaf-55f77f9d8cab - TypeError: D:\Web Projects\Test Node_JS\views\index.ejs:110
+    108|                     <div class="card__title">
+    109|                         <% if(user===null){%>
+ >> 110|                             <!-- <%= user.username%> -->
+    111|                             <h1 style="color: red; font-size: 2rem;">User not found</h1>
+    112|                             <% }%>
+    113|                     </div>
+
+Cannot read properties of null (reading 'username')
+2025-06-15 15:38:44 - d6601e18-b3fb-49cb-9bd9-3998fd0d544f - ReferenceError: D:\Web Projects\Test Node_JS\views\index.ejs:109
+    107|                     </div>
+    108|                     <div class="card__title">
+ >> 109|                         <% if(user===null){%>
+    110|                             <h1 style="color: red; font-size: 2rem;">User not found</h1>
+    111|                             <% }%>
+    112|                     </div>
+
+user is not defined
+2025-06-15 15:39:00 - 2051a4c7-e752-4ae3-a09a-eea313d61eb8 - ReferenceError: D:\Web Projects\Test Node_JS\views\index.ejs:109
+    107|                     </div>
+    108|                     <div class="card__title">
+ >> 109|                         <% if(!user){%>
+    110|                             <h1 style="color: red; font-size: 2rem;">User not found</h1>
+    111|                             <% }%>
+    112|                     </div>
+
+user is not defined
+2025-06-15 15:40:11 - 7a5cafe7-7f69-457c-bf19-657d02660331 - ReferenceError: D:\Web Projects\Test Node_JS\views\index.ejs:109
+    107|                     </div>
+    108|                     <div class="card__title">
+ >> 109|                         <% if(user===undefined){%>
+    110|                             <h1 style="color: red; font-size: 2rem;">User not found</h1>
+    111|                             <% }%>
+    112|                     </div>
+
+user is not defined
+2025-06-15 15:52:26 - b83803b0-686f-4131-84f2-3685afcca315 - SyntaxError: Unexpected token 'else' in D:\Web Projects\Test Node_JS\views\index.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-06-15 16:06:16 - cf4d731e-df06-43da-a555-65de4f60d60d - TypeError: Cannot convert undefined or null to object
+2025-06-15 16:14:08 - a3e35b5f-c55c-4edd-88a3-3d8e950677d4 - ReferenceError: D:\Web Projects\Test Node_JS\views\index.ejs:13
+    11| <body>
+    12|     <%- include('./components/header.ejs')%>
+ >> 13|         <% if(user===null){%>
+    14|             <div style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+    15|                 <h1 style="font-size: 3rem; font-weight: bold;">Hello, there!</h1>
+    16|             </div>
+
+user is not defined
+2025-06-15 16:14:26 - 38416d49-383b-44e0-a669-feaa686d73f6 - SyntaxError: Unexpected token 'catch' in D:\Web Projects\Test Node_JS\views\index.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-06-15 16:14:54 - 0269e1c3-5329-420b-8eef-8f0461c4728b - SyntaxError: Unexpected token 'catch' in D:\Web Projects\Test Node_JS\views\index.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-06-15 16:14:55 - 06617a56-cbe1-461d-93da-45ad7ae58faf - SyntaxError: Unexpected token 'catch' in D:\Web Projects\Test Node_JS\views\index.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-06-15 16:15:09 - ae8da287-da67-40d2-82e3-db71317cdaaf - SyntaxError: Unexpected token 'catch' in D:\Web Projects\Test Node_JS\views\index.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-06-15 16:15:24 - d53152bb-bd11-43c9-9446-fce5dcf396c1 - SyntaxError: Unexpected token 'catch' in D:\Web Projects\Test Node_JS\views\index.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-06-15 16:16:09 - 8a717b43-c38c-4b5f-86e9-5e8240b8fffd - SyntaxError: missing ) after argument list in D:\Web Projects\Test Node_JS\views\index.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-06-15 16:42:51 - 3c833b73-b2e8-4e89-9b24-5f1fe224cc6e - ReferenceError: userRolesArr is not defined
+2025-06-15 17:04:01 - 054133f2-b807-4d28-9177-66ba4cb99c20 - Error: Could not find matching close tag for "<%".
+2025-06-16 00:46:23 - 0b09c6d1-6d05-46f5-86e1-42fc7356dd04 - TypeError: Cannot read properties of null (reading 'roles')
+2025-06-16 00:51:31 - c5f0a76e-dc21-4022-a355-70a1a276319c - TypeError: Cannot read properties of null (reading 'roles')

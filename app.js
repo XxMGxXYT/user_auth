@@ -58,6 +58,7 @@ app.use("/refresh", require("./routes/refreshTokenRoute"));
 
 // app.use(verifyJWT) // JWT middleware
 app.use("/users", verifyJWT, require("./routes/usersRoute"));
+// app.use("/users/:id", verifyJWT, require("./routes/usersRoute")); // This route is for a specific user
 app.use("/logout", require("./routes/logoutRoute"));
 
 // This middleware allows users to access the routes below only if they have a valid JWT token

@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const deleteUserController = require("../controllers/deleteUserController");
 
 router.get("/", (req, res) => {
     let user = req.userObj; // Access the user object from the request
@@ -14,6 +15,6 @@ router.get("/", (req, res) => {
     }
     res.render("users.ejs", { user: user, userRoles: userRolesArr }); // Render the users.ejs template with the user object
     // console.log("From routes:", req.userObj)
-});
+}).post("/:id", deleteUserController); // Route to delete a user
 
 module.exports = router;

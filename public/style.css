@@ -15,9 +15,14 @@ h1 {
     color: #000;
 }
 
+a:focus {
+    outline: none;
+}
+
 header {
     width: 100%;
     height: 80px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -55,7 +60,6 @@ header nav ul li {
     font-size: 1.2rem;
     color: #fff;
     font-weight: 600;
-    cursor: pointer;
     transition: 0.3s;
     width: fit-content;
     height: 40px;
@@ -302,11 +306,26 @@ footer p {
 
 /* One user card */
 
-.card_wrapper {
+.cards_container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 0px 10px;
+    justify-content: center;
+}
+
+.single_card_wrapper {
+    width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.card_wrapper {
+    width: calc((100% / 3) - 20px);
 }
 
 .card {
@@ -315,7 +334,7 @@ footer p {
     --bg-color: #f7f7f7;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     position: relative;
-    width: 300px;
+    /* width: 300px; */
     height: 384px;
     display: flex;
     flex-direction: column;
@@ -366,6 +385,34 @@ footer p {
     justify-content: center;
     gap: 5px;
     color: var(--submain-color);
+}
+
+.card_job {
+    margin-top: 6px;
+    width: 100%;
+    text-align: center;
+}
+
+.card_job p {
+    font-weight: 400;
+    font-size: 16px;
+    color: #626a70;
+}
+
+.delete_btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.delete_btn:hover {
+    background-color: #ff1a1a;
 }
 
 /* One user card */
@@ -984,3 +1031,64 @@ footer p {
 }
 
 /* 404 page */
+
+@media only screen and (max-width: 768px) {
+    .card_wrapper {
+        width: calc((100% / 2) - 20px);
+    }
+
+    header nav ul {
+        gap: 15px;
+    }
+
+    header nav ul li {
+        font-size: 1rem;
+    }
+
+    .register_form_div form,
+    .login_form_div form {
+        width: 90%;
+    }
+
+    .register_form_div form input[type="text"],
+    .register_form_div form input[type="password"],
+    .login_form_div form input[type="text"],
+    .login_form_div form input[type="password"] {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 560px) {
+
+    .card_wrapper {
+        width: calc((100% / 1) - 20px);
+    }
+
+    header {
+        padding: 10px 20px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header nav ul {
+        gap: 10px;
+    }
+
+    header nav ul li {
+        font-size: 0.9rem;
+    }
+
+    .register_form_div form,
+    .login_form_div form {
+        width: 95%;
+    }
+
+    .register_form_div form input[type="text"],
+    .register_form_div form input[type="password"],
+    .login_form_div form input[type="text"],
+    .login_form_div form input[type="password"] {
+        width: 100%;
+    }
+}

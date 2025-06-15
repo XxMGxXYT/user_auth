@@ -7,7 +7,7 @@ const refreshTokenHandler = async (req, res) => {
     if (!cookies?.jwt_refresh) return res.sendStatus(401);
     // Check if user not exist
     const foundUser = await Users.findOne({ refreshToken: cookies.jwt_refresh }).exec();
-    if (!foundUser) return res.sendStatus(403); // Forbidden
+    if (!foundUser) return res.redirect("/login"); // Forbidden and need to login again
     // Evaluate JWT
     jwt.verify(cookies.jwt_refresh, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
         if (err || foundUser.username !== decoded.username) return res.sendStatus(403) // Forbidden
