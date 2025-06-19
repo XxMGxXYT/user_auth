@@ -69,7 +69,7 @@ app.use("/logout", require("./routes/logoutRoute"));
 // 404 route
 app.use(async (req, res) => {
     // If user logged in, set to true
-    let userLoggedIn = req.cookies?.jwt_refresh ? true : false;
+    let userLoggedIn = req.cookies?.jwt_access ? true : false;
     let loggedInUser = await User.findOne({ refreshToken: req.cookies.jwt_refresh });
     res.status(404).render("404.ejs", { userLoggedIn, loggedInUser })
 })

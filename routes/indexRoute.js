@@ -9,7 +9,7 @@ router.get(/^\/$|index(.html)?/, async (req, res) => {
         res.render("index.ejs", { users: null }); // Render the index.ejs template with a null users object
     } else {
         // If user logged in, set to true
-        let userLoggedIn = req.cookies?.jwt_refresh ? true : false;
+        let userLoggedIn = req.cookies?.jwt_access ? true : false;
         let loggedInUser = await User.findOne({ refreshToken: req.cookies.jwt_refresh });
         let userRolesArr = [];
         // Loop through the users and extract roles
