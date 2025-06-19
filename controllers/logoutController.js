@@ -15,7 +15,6 @@ const logoutHandler = async (req, res, next) => {
         foundUser.refreshToken = ''
         await foundUser.save()
         // Clear the cookie
-        res.clearCookie("jwt", { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
         res.redirect("/")
     }
     } catch(err){
