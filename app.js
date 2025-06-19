@@ -15,6 +15,7 @@ const verifyRoles = require('./middlewares/verifyRoles')
 const USERS_ROLES = require('./configs/usersRoles')
 const connectDB = require("./configs/connectDB");
 const mongoose = require("mongoose");
+const User = require("./models/Users");
 
 // Connect to the database
 connectDB()
@@ -50,14 +51,15 @@ app.use(credentials)
 app.use(cors(corsOptions))
 
 // The routes middlewares
-app.use("/", require("./routes/route_one"));
+app.use("/", require("./routes/indexRoute"));
 app.use("/register", require("./routes/registerRoute"));
 app.use("/login", require("./routes/authRoute"));
 app.use("/refresh", require("./routes/refreshTokenRoute"));
 
 
 // app.use(verifyJWT) // JWT middleware
-app.use("/users", verifyJWT, require("./routes/usersRoute"));
+
+app.use("/:username", verifyJWT, require("./routes/usersRoute"));
 // app.use("/users/:id", verifyJWT, require("./routes/usersRoute")); // This route is for a specific user
 app.use("/logout", require("./routes/logoutRoute"));
 
@@ -65,8 +67,11 @@ app.use("/logout", require("./routes/logoutRoute"));
 // app.use(verifyRoles(USERS_ROLES.User)) // Roles middleware
 
 // 404 route
-app.use((req, res) => {
-    res.status(404).render("404.ejs")
+app.use(async (req, res) => {
+    // If user logged in, set to true
+    let userLoggedIn = req.cookies?.jwt_refresh ? true : false;
+    let loggedInUser = await User.findOne({ refreshToken: req.cookies.jwt_refresh });
+    res.status(404).render("404.ejs", { userLoggedIn, loggedInUser })
 })
 
 // This middleware allows only admins to access the routes below

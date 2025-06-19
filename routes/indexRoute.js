@@ -8,6 +8,9 @@ router.get(/^\/$|index(.html)?/, async (req, res) => {
     if (users === null || users.length === 0) {
         res.render("index.ejs", { users: null }); // Render the index.ejs template with a null users object
     } else {
+        // If user logged in, set to true
+        let userLoggedIn = req.cookies?.jwt_refresh ? true : false;
+        let loggedInUser = await User.findOne({ refreshToken: req.cookies.jwt_refresh });
         let userRolesArr = [];
         // Loop through the users and extract roles
         for (let i = 0; i < users.length; i++) {
@@ -22,7 +25,7 @@ router.get(/^\/$|index(.html)?/, async (req, res) => {
             }
             userRolesArr.push(singleArr);
         }
-        res.render("index.ejs", { users, userRolesArr }); // Render the index.ejs template with a null users object
+        res.render("index.ejs", { users, userRolesArr, userLoggedIn, loggedInUser }); // Render the index.ejs template with a null users object
         // console.log("From index route:", users);
     }
 })

@@ -326,3 +326,5 @@ Or, if you meant to create an async function, pass `async: true` as an option.
 2025-06-15 17:04:01 - 054133f2-b807-4d28-9177-66ba4cb99c20 - Error: Could not find matching close tag for "<%".
 2025-06-16 00:46:23 - 0b09c6d1-6d05-46f5-86e1-42fc7356dd04 - TypeError: Cannot read properties of null (reading 'roles')
 2025-06-16 00:51:31 - c5f0a76e-dc21-4022-a355-70a1a276319c - TypeError: Cannot read properties of null (reading 'roles')
+2025-06-19 15:23:18 - a3ef27a9-53c9-4284-ae28-3078ec8f9df5 - ReferenceError: User is not defined
+2025-06-19 16:23:50 - 47915d73-98ae-448e-a2b2-8c6b60d89e74 - TypeError: Cannot read properties of undefined (reading 'cookies')
