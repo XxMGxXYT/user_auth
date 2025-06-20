@@ -10,6 +10,12 @@ router.get(/^\/$|index(.html)?/, async (req, res) => {
     } else {
         let userLoggedIn = req.cookies?.jwt_refresh ? true : false;
         let loggedInUser = await User.findOne({ refreshToken: req.cookies.jwt_refresh });
+        if (!loggedInUser && userLoggedIn) {
+            res.clearCookie("jwt_refresh"); // Clear the cookie if the user is not found
+            if (req.cookies.jwt_access) {
+                res.clearCookie("jwt_access"); // Clear the access cookie if it exists
+            }
+        }
         let userRolesArr = [];
         // Loop through the users and extract roles
         for (let i = 0; i < users.length; i++) {
