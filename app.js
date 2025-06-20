@@ -51,33 +51,6 @@ app.use(credentials)
 // CORS middleware
 app.use(cors(corsOptions))
 
-// If there is a refreshToken in user's cookies
-// app.use(async (req, res, next) => {
-//     if (req.cookies.jwt_refresh) {
-//         const foundUser = await User.findOne({ refreshToken: req.cookies.jwt_refresh }).exec();
-//         jwt.verify(req.cookies.jwt_refresh, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
-//             if (err || foundUser.username !== decoded.username) return next()
-//             // Refresh token is valid and matches the user
-//             const roles = Object.values(foundUser.roles)
-//             // Create new access token
-//             const newAccessToken = jwt.sign(
-//                 {
-//                     "userInfo": {
-//                         "username": foundUser.username,
-//                         "roles": roles
-//                     }
-//                 },
-//                 process.env.ACCESS_TOKEN_SECRET,
-//                 { expiresIn: "1m" }
-//             )
-//             res.cookie("jwt_access", newAccessToken, { httpOnly: true, maxAge: 60 * 60 * 1000 })
-//             return next();
-//         })
-//     } else {
-//         next()
-//     }
-// })
-
 // The routes middlewares
 app.use("/", require("./routes/route_one"));
 app.use("/register", require("./routes/registerRoute"));
@@ -97,6 +70,12 @@ app.use("/logout", require("./routes/logoutRoute"));
 app.use(async (req, res) => {
     let userLoggedIn = req.cookies?.jwt_refresh ? true : false;
     let loggedInUser = await User.findOne({ refreshToken: req.cookies.jwt_refresh });
+    if (!loggedInUser && userLoggedIn) {
+        res.clearCookie("jwt_refresh"); // Clear the cookie if the user is not found
+        if (req.cookies.jwt_access) {
+            res.clearCookie("jwt_access"); // Clear the access cookie if it exists
+        }
+    }
     res.status(404).render("404.ejs", { userLoggedIn, loggedInUser })
 })
 

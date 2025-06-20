@@ -10,94 +10,100 @@
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1><a href="/">Logo</a></h1>
+    <% if(!loggedInUser && userLoggedIn){%>
+        <div class="alert">
+            <p>You are no longer logged in, please login again.</p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/login">Login</a></li>
-                <% if(userLoggedIn && loggedInUser){%>
-                    <li><a href="/user/<%= loggedInUser.username%>">
-                            <%= loggedInUser.username%>
-                        </a></li>
-                    <% }%>
-            </ul>
-        </nav>
-    </header>
-    <div class="register_form_div">
-        <form action="/register" method="post">
-            <div class="username_div">
-                <label for="username">Username <span style="color:rgb(255, 35, 35)">(Required!)</span></label>
-                <input type="text" name="user" id="username" placeholder="Username" required>
+        <% } %>
+            <header>
+                <div class="logo">
+                    <h1><a href="/">Logo</a></h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <% if(userLoggedIn && loggedInUser){%>
+                            <li><a href="/user/<%= loggedInUser.username%>">
+                                    <%= loggedInUser.username%>
+                                </a></li>
+                            <% }%>
+                    </ul>
+                </nav>
+            </header>
+            <div class="register_form_div">
+                <form action="/register" method="post">
+                    <div class="username_div">
+                        <label for="username">Username <span style="color:rgb(255, 35, 35)">(Required!)</span></label>
+                        <input type="text" name="user" id="username" placeholder="Username" required>
+                    </div>
+                    <div class="pass_div">
+                        <label for="password">Password <span style="color:rgb(255, 35, 35)">(Required!)</span></label>
+                        <input type="password" name="pwd" id="password" placeholder="Password" required>
+                    </div>
+                    <div class="gen_div">
+                        <label for="gender">Gender <span style="color: rgb(0, 255, 34)">(Optional)</span></label>
+                        <select name="gender" id="gender">
+                            <option value="none" selected>None</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <div class="job_div">
+                        <label for="job">What's your job? <span style="color: rgb(0, 255, 34)">(Optional)</span></label>
+                        <textarea name="job" id="job"
+                            placeholder="e.g: I'm a Freelancer as a Full stack web developer."></textarea>
+                    </div>
+                    <div class="submit_div">
+                        <input type="submit" value="register">
+                    </div>
+                </form>
             </div>
-            <div class="pass_div">
-                <label for="password">Password <span style="color:rgb(255, 35, 35)">(Required!)</span></label>
-                <input type="password" name="pwd" id="password" placeholder="Password" required>
-            </div>
-            <div class="gen_div">
-                <label for="gender">Gender <span style="color: rgb(0, 255, 34)">(Optional)</span></label>
-                <select name="gender" id="gender">
-                    <option value="none" selected>None</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                </select>
-            </div>
-            <div class="job_div">
-                <label for="job">What's your job? <span style="color: rgb(0, 255, 34)">(Optional)</span></label>
-                <textarea name="job" id="job"
-                    placeholder="e.g: I'm a Freelancer as a Full stack web developer."></textarea>
-            </div>
-            <div class="submit_div">
-                <input type="submit" value="register">
-            </div>
-        </form>
-    </div>
-    <%- include('./components/footer.ejs')%>
-        <script>
+            <%- include('./components/footer.ejs')%>
+                <script>
 
-            // Get The form
-            const form = document.querySelector('form');
+                    // Get The form
+                    const form = document.querySelector('form');
 
-            // Add event listener to the form
-            form.addEventListener("submit", async (e) => {
-                e.preventDefault() // Prevent the default form submission
+                    // Add event listener to the form
+                    form.addEventListener("submit", async (e) => {
+                        e.preventDefault() // Prevent the default form submission
 
-                // Get all data from the form
-                const username = document.getElementById('username');
-                const password = document.getElementById('password');
-                const gender = document.getElementById("gender");
-                const job = document.getElementById("job");
+                        // Get all data from the form
+                        const username = document.getElementById('username');
+                        const password = document.getElementById('password');
+                        const gender = document.getElementById("gender");
+                        const job = document.getElementById("job");
 
-                const finalData = {
-                    user: username.value,
-                    pwd: password.value,
-                    gender: gender.value,
-                    job: job ? job.value : "none"
-                }
+                        const finalData = {
+                            user: username.value,
+                            pwd: password.value,
+                            gender: gender.value,
+                            job: job ? job.value : "none"
+                        }
 
-                for (let key in finalData) {
-                    if (finalData[key] == "none") {
-                        delete finalData[key]
-                    }
-                }
-                const response = await fetch("http://localhost:3500/register", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
-                    body: JSON.stringify(finalData)
-                })
-                const data = await response.json();
-                if (response.ok) {
-                    alert("Registration successful!");
-                    window.location.href = "/login"; // Redirect to login page
-                } else {
-                    alert(data.message);
-                }
-            })
-        </script>
+                        for (let key in finalData) {
+                            if (finalData[key] == "none") {
+                                delete finalData[key]
+                            }
+                        }
+                        const response = await fetch("http://localhost:3500/register", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(finalData)
+                        })
+                        const data = await response.json();
+                        if (response.ok) {
+                            alert("Registration successful!");
+                            window.location.href = "/login"; // Redirect to login page
+                        } else {
+                            alert(data.message);
+                        }
+                    })
+                </script>
+                <script src="/main.js"></script>
 </body>
 
 </html>
