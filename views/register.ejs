@@ -18,7 +18,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/login">Login</a></li>
-                <% if(userLoggedIn){%>
+                <% if(userLoggedIn && loggedInUser){%>
                     <li><a href="/user/<%= loggedInUser.username%>">
                             <%= loggedInUser.username%>
                         </a></li>
