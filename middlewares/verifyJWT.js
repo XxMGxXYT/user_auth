@@ -17,9 +17,6 @@ const verifyJWT = (req, res, next) => {
             if (req.cookies.jwt_refresh) {
                 // If the access token is invalid but a refresh token exists, redirect to refresh route
                 return res.redirect("/refresh")
-            } else {
-                res.clearCookie('jwt_access', { httpOnly: true });
-                res.render("forbidden.ejs")
             }
         } else {
             const theUser = await Users.findOne({ username: decoded.userInfo.username }).exec()

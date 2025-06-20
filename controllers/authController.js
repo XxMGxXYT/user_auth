@@ -34,9 +34,9 @@ const loginHandler = async (req, res) => {
         // const updatedUser = await Users.updateOne({ username: user }, { $set: { refreshToken: refreshToken } });
         foundUser.refreshToken = refreshToken;
         await foundUser.save();
-        // Create a cookie for storing the Refresh token
-        res.cookie("jwt_refresh", refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
-        res.cookie("jwt_access", accessToken, { httpOnly: true, maxAge: 60 * 60 * 1000 })
+        // Create a cookie for storing the Refresh token and access token
+        res.cookie("jwt_refresh", refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 }) // 1 day
+        res.cookie("jwt_access", accessToken, { httpOnly: true, maxAge: 5 * 60 * 1000 }) // 5 minutes
         res.redirect("/user")
     } else {
         res.sendStatus(401) // Unauthorized
