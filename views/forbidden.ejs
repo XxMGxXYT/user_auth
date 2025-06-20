@@ -18,7 +18,11 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="/login">Login</a></li>
                 <li><a href="/register">Register</a></li>
-                <li><a href="/users">Users</a></li>
+                <% if(userLoggedIn){%>
+                    <li><a href="/<%= loggedInUser.username%>">
+                            <%= loggedInUser.username%>
+                        </a></li>
+                    <% }%>
             </ul>
         </nav>
     </header>

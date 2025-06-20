@@ -3,6 +3,15 @@ const router = express.Router();
 const deleteUserController = require("../controllers/deleteUserController");
 
 router.get("/", (req, res) => {
+    // Middleware to check if the user is logged in
+    if (!req.userObj) {
+        return res.redirect("/login")
+    } else {
+        return res.redirect("/user/" + req.userObj.username)
+    }
+});
+
+router.get("/:username", (req, res) => {
     let user = req.userObj; // Access the user object from the request
     let userRolesArr = []
     // loop on user roles

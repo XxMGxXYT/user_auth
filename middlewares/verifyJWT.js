@@ -5,11 +5,11 @@ const verifyJWT = (req, res, next) => {
     // Check if the authorization header is present and starts with "Bearer "
     // If not, send a 401 Unauthorized status
     const accessToken = req.cookies.jwt_access // Get the JWT from cookies
-    if (!accessToken){
-        if(req.cookies.jwt_refresh){
-            res.redirect("/refresh")
+    if (!accessToken) {
+        if (req.cookies.jwt_refresh) {
+            return res.redirect("/refresh")
         } else {
-            res.redirect("/login") // Unauthorized access
+            return res.redirect("/login") // Unauthorized access
         }
     }
     jwt.verify(accessToken, process.env.ACCESS_TOKEN_SECRET, async (err, decoded) => {

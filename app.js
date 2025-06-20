@@ -16,6 +16,7 @@ const USERS_ROLES = require('./configs/usersRoles')
 const connectDB = require("./configs/connectDB");
 const mongoose = require("mongoose");
 const User = require("./models/Users");
+const jwt = require("jsonwebtoken")
 
 // Connect to the database
 connectDB()
@@ -50,16 +51,42 @@ app.use(credentials)
 // CORS middleware
 app.use(cors(corsOptions))
 
+// If there is a refreshToken in user's cookies
+// app.use(async (req, res, next) => {
+//     if (req.cookies.jwt_refresh) {
+//         const foundUser = await User.findOne({ refreshToken: req.cookies.jwt_refresh }).exec();
+//         jwt.verify(req.cookies.jwt_refresh, process.env.REFRESH_TOKEN_SECRET, (err, decoded) => {
+//             if (err || foundUser.username !== decoded.username) return next()
+//             // Refresh token is valid and matches the user
+//             const roles = Object.values(foundUser.roles)
+//             // Create new access token
+//             const newAccessToken = jwt.sign(
+//                 {
+//                     "userInfo": {
+//                         "username": foundUser.username,
+//                         "roles": roles
+//                     }
+//                 },
+//                 process.env.ACCESS_TOKEN_SECRET,
+//                 { expiresIn: "1m" }
+//             )
+//             res.cookie("jwt_access", newAccessToken, { httpOnly: true, maxAge: 60 * 60 * 1000 })
+//             return next();
+//         })
+//     } else {
+//         next()
+//     }
+// })
+
 // The routes middlewares
-app.use("/", require("./routes/indexRoute"));
+app.use("/", require("./routes/route_one"));
 app.use("/register", require("./routes/registerRoute"));
 app.use("/login", require("./routes/authRoute"));
 app.use("/refresh", require("./routes/refreshTokenRoute"));
 
 
 // app.use(verifyJWT) // JWT middleware
-
-app.use("/:username", verifyJWT, require("./routes/usersRoute"));
+app.use("/user", verifyJWT, require("./routes/usersRoute"));
 // app.use("/users/:id", verifyJWT, require("./routes/usersRoute")); // This route is for a specific user
 app.use("/logout", require("./routes/logoutRoute"));
 
@@ -68,8 +95,7 @@ app.use("/logout", require("./routes/logoutRoute"));
 
 // 404 route
 app.use(async (req, res) => {
-    // If user logged in, set to true
-    let userLoggedIn = req.cookies?.jwt_access ? true : false;
+    let userLoggedIn = req.cookies?.jwt_refresh ? true : false;
     let loggedInUser = await User.findOne({ refreshToken: req.cookies.jwt_refresh });
     res.status(404).render("404.ejs", { userLoggedIn, loggedInUser })
 })

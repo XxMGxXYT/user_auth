@@ -326,5 +326,14 @@ Or, if you meant to create an async function, pass `async: true` as an option.
 2025-06-15 17:04:01 - 054133f2-b807-4d28-9177-66ba4cb99c20 - Error: Could not find matching close tag for "<%".
 2025-06-16 00:46:23 - 0b09c6d1-6d05-46f5-86e1-42fc7356dd04 - TypeError: Cannot read properties of null (reading 'roles')
 2025-06-16 00:51:31 - c5f0a76e-dc21-4022-a355-70a1a276319c - TypeError: Cannot read properties of null (reading 'roles')
-2025-06-19 15:23:18 - a3ef27a9-53c9-4284-ae28-3078ec8f9df5 - ReferenceError: User is not defined
-2025-06-19 16:23:50 - 47915d73-98ae-448e-a2b2-8c6b60d89e74 - TypeError: Cannot read properties of undefined (reading 'cookies')
+2025-06-20 14:36:42 - 9444de16-3598-4c92-9556-16d9821b84d6 - ReferenceError: User is not defined
+2025-06-20 14:36:51 - e8a3e7a5-3d5b-477e-9db3-00eedd591683 - ReferenceError: User is not defined
+2025-06-20 14:36:51 - d1d3328d-623a-4f33-82de-98819e854359 - ReferenceError: User is not defined
+2025-06-20 15:28:22 - ba274156-c5af-4230-bec2-310a1cfe1201 - ReferenceError: jwt is not defined
+2025-06-20 15:28:22 - dfe644fd-8131-4616-8c2f-8778bfde0ec3 - ReferenceError: jwt is not defined
+2025-06-20 15:29:06 - 3397b678-5faf-40ef-9cc6-fc53bb568109 - ReferenceError: cookies is not defined
+2025-06-20 15:29:06 - 184bf06f-47e3-4ad3-a88c-561274df9cac - ReferenceError: cookies is not defined
+2025-06-20 15:31:18 - 47d5c9a6-153e-42c1-bd08-103b8f380bc1 - ReferenceError: foundUser is not defined
+2025-06-20 15:31:18 - d94ac7be-836d-4843-8d68-84f52661668f - ReferenceError: foundUser is not defined
+2025-06-20 15:33:06 - d90ab6b0-30dc-4d01-89fc-919d6ec312de - ReferenceError: cookies is not defined
+2025-06-20 15:33:06 - ff9d7c8b-7e92-4732-a4f1-fdf9ccf57e55 - ReferenceError: cookies is not defined
