@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
     <title>Register</title>
 </head>
 
@@ -15,49 +17,62 @@
             <p>You are no longer logged in, please login again.</p>
         </div>
         <% } %>
-            <header>
-                <div class="logo">
-                    <h1><a href="/">Logo</a></h1>
+            <!-- Here goes Navbar -->
+            <nav class="navbar navbar-expand-lg bg-light py-3">
+                <div class=" container">
+                    <a class="navbar-brand d-flex align-items-center gap-2 text-dark" href="/">
+                        <div style="width: 1rem; height: 1rem;">
+                            <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-dark fs-5 fw-bold mb-0">TaskMaster</h2>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main"
+                        aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </button>
+                    <div class="collapse navbar-collapse mt-3 justify-content-lg-end gap-lg-3" id="main">
+                        <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/">Home</a>
+                        <a class="btn btn-custom-blue rounded-pill my-1" href="/login">Login</a>
+                        <a class="btn btn-custom-blue rounded-pill my-1" href="/register">Register</a>
+                    </div>
                 </div>
-                <nav>
-                    <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/login">Login</a></li>
-                        <% if(userLoggedIn && loggedInUser){%>
-                            <li><a href="/user/<%= loggedInUser.username%>">
-                                    <%= loggedInUser.username%>
-                                </a></li>
-                            <% }%>
-                    </ul>
-                </nav>
-            </header>
-            <div class="register_form_div">
-                <form action="/register" method="post">
-                    <div class="username_div">
-                        <label for="username">Username <span style="color:rgb(255, 35, 35)">(Required!)</span></label>
-                        <input type="text" name="user" id="username" placeholder="Username" required>
-                    </div>
-                    <div class="pass_div">
-                        <label for="password">Password <span style="color:rgb(255, 35, 35)">(Required!)</span></label>
-                        <input type="password" name="pwd" id="password" placeholder="Password" required>
-                    </div>
-                    <div class="gen_div">
-                        <label for="gender">Gender <span style="color: rgb(0, 255, 34)">(Optional)</span></label>
-                        <select name="gender" id="gender">
-                            <option value="none" selected>None</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
-                        </select>
-                    </div>
-                    <div class="job_div">
-                        <label for="job">What's your job? <span style="color: rgb(0, 255, 34)">(Optional)</span></label>
-                        <textarea name="job" id="job"
-                            placeholder="e.g: I'm a Freelancer as a Full stack web developer."></textarea>
-                    </div>
-                    <div class="submit_div">
-                        <input type="submit" value="register">
-                    </div>
-                </form>
+            </nav>
+            <!-- Here ends Navbar -->
+            <div class="register_form_div my-4 my-md-0">
+                <div class="register_header_div">
+                    <h1 class="text-center text-light fw-bold">Create your account</h1>
+                </div>
+                <div class="container text-center">
+                    <form action=" /register" method="post">
+                        <div class="username_div">
+                            <label for="username">Username <span
+                                    style="color:rgb(255, 35, 35)">(Required!)</span></label>
+                            <input type="text" name="user" id="username" placeholder="Username" required>
+                        </div>
+                        <div class="pass_div">
+                            <label for="password">Password <span
+                                    style="color:rgb(255, 35, 35)">(Required!)</span></label>
+                            <input type="password" name="pwd" id="password" placeholder="Password" required>
+                        </div>
+                        <div class="gen_div">
+                            <label for="gender">Gender <span style="color: rgb(0, 255, 34)">(Optional)</span></label>
+                            <select name="gender" id="gender">
+                                <option value="none" selected>None</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="job_div">
+                            <label for="job">What's your job? <span
+                                    style="color: rgb(0, 255, 34)">(Optional)</span></label>
+                            <input type="text" name="job" id="job" minlength="10" maxlength="20"
+                                placeholder="e.g: Full stack web developer."></input>
+                        </div>
+                        <input class="submit_div btn btn-custom-blue my-3" type="submit" value="register">
+                    </form>
+                </div>
             </div>
             <%- include('./components/footer.ejs')%>
                 <script>
@@ -103,7 +118,9 @@
                         }
                     })
                 </script>
-                <script src="/main.js"></script>
+                <script src="/js/all.min.js"></script>
+                <script src="/js/bootstrap.bundle.min.js"></script>
+                <script src="/js/main.js"></script>
 </body>
 
 </html>

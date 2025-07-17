@@ -1,29 +1,38 @@
 const express = require("express");
 const router = express.Router();
-const deleteUserController = require("../controllers/deleteUserController");
+const User = require("../models/Users");
 
-router.get("/", (req, res) => {
-    // Middleware to check if the user is logged in
-    if (!req.userObj) {
-        return res.redirect("/login")
+// First route
+router.get(/^\/$|users(.html)?/, async (req, res) => {
+    let users = await User.find().sort({ createdAt: -1 }); // Fetch all userss from the database and sort them by creation date
+    if (users === null || users.length === 0) {
+        res.render("users.ejs", { users: null }); // Render the index.ejs template with a null users object
     } else {
-        return res.redirect("/user/" + req.userObj.username)
-    }
-});
-
-router.get("/:username", (req, res) => {
-    let user = req.userObj; // Access the user object from the request
-    let userRolesArr = []
-    // loop on user roles
-    for (let i = 0; i < Object.keys(user.roles).length; i++) {
-        if (user.roles[Object.keys(user.roles)[i]] === 0) {
-            continue
-        } else {
-            userRolesArr.push(Object.keys(user.roles)[i])
+        let userLoggedIn = req.cookies?.jwt_refresh ? true : false;
+        let loggedInUser = await User.findOne({ refreshToken: req.cookies.jwt_refresh });
+        if (!loggedInUser && userLoggedIn) {
+            res.clearCookie("jwt_refresh"); // Clear the cookie if the user is not found
+            if (req.cookies.jwt_access) {
+                res.clearCookie("jwt_access"); // Clear the access cookie if it exists
+            }
         }
+        let userRolesArr = [];
+        // Loop through the users and extract roles
+        for (let i = 0; i < users.length; i++) {
+            let user = users[i];
+            let singleArr = [];
+            for (let j = 0; j < Object.keys(user.roles).length; j++) {
+                if (user.roles[Object.keys(user.roles)[j]] === 0) {
+                    continue;
+                } else {
+                    singleArr.push(Object.keys(user.roles)[j]);
+                }
+            }
+            userRolesArr.push(singleArr);
+        }
+        res.render("users.ejs", { users, userRolesArr, userLoggedIn, loggedInUser }); // Render the index.ejs template with a null users object
+        // console.log("From index route:", users);
     }
-    res.render("users.ejs", { user: user, userRoles: userRolesArr }); // Render the users.ejs template with the user object
-    // console.log("From routes:", req.userObj)
-}).post("/:id", deleteUserController); // Route to delete a user
+})
 
 module.exports = router;

@@ -52,14 +52,15 @@ app.use(credentials)
 app.use(cors(corsOptions))
 
 // The routes middlewares
-app.use("/", require("./routes/route_one"));
+app.use("/", require("./routes/homeRoute"));
+app.use("/users", require("./routes/usersRoute"));
 app.use("/register", require("./routes/registerRoute"));
-app.use("/login", require("./routes/authRoute"));
+app.use("/login", require("./routes/loginRoute"));
 app.use("/refresh", require("./routes/refreshTokenRoute"));
 
 
 // app.use(verifyJWT) // JWT middleware
-app.use("/user", verifyJWT, require("./routes/usersRoute"));
+app.use("/user", verifyJWT, require("./routes/userRoute"));
 // app.use("/users/:id", verifyJWT, require("./routes/usersRoute")); // This route is for a specific user
 app.use("/logout", require("./routes/logoutRoute"));
 

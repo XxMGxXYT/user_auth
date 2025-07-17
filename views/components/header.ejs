@@ -1,0 +1,17 @@
+<header>
+    <div class="logo">
+        <h1><a href="/">Logo</a></h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/register">Register</a></li>
+            <% if(userLoggedIn && loggedInUser){%>
+                <li><a href="/user/<%= loggedInUser.username%>">
+                        <%= loggedInUser.username%>
+                    </a></li>
+                <% }%>
+        </ul>
+    </nav>
+</header>

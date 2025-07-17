@@ -4,145 +4,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/style.css">
-    <title>Users Page</title>
+    <title>Users</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1><a href="/">Logo</a></h1>
+    <% if(!loggedInUser && userLoggedIn){%>
+        <div class="alert">
+            <p>You are no longer logged in, please login again.</p>
         </div>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/logout">Logout</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="single_card_wrapper">
-        <div class="card">
-            <div class="card__img"><svg xmlns="http://www.w3.org/2000/svg" width="100%">
-                    <rect fill="#ffffff" width="540" height="450"></rect>
-                    <defs>
-                        <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="0" x2="0" y1="0" y2="100%"
-                            gradientTransform="rotate(222,648,379)">
-                            <stop offset="0" stop-color="#ffffff"></stop>
-                            <stop offset="1" stop-color="#FC726E"></stop>
-                        </linearGradient>
-                        <pattern patternUnits="userSpaceOnUse" id="b" width="300" height="250" x="0" y="0"
-                            viewBox="0 0 1080 900">
-                            <g fill-opacity="0.5">
-                                <polygon fill="#444" points="90 150 0 300 180 300"></polygon>
-                                <polygon points="90 150 180 0 0 0"></polygon>
-                                <polygon fill="#AAA" points="270 150 360 0 180 0"></polygon>
-                                <polygon fill="#DDD" points="450 150 360 300 540 300"></polygon>
-                                <polygon fill="#999" points="450 150 540 0 360 0"></polygon>
-                                <polygon points="630 150 540 300 720 300"></polygon>
-                                <polygon fill="#DDD" points="630 150 720 0 540 0"></polygon>
-                                <polygon fill="#444" points="810 150 720 300 900 300"></polygon>
-                                <polygon fill="#FFF" points="810 150 900 0 720 0"></polygon>
-                                <polygon fill="#DDD" points="990 150 900 300 1080 300"></polygon>
-                                <polygon fill="#444" points="990 150 1080 0 900 0"></polygon>
-                                <polygon fill="#DDD" points="90 450 0 600 180 600"></polygon>
-                                <polygon points="90 450 180 300 0 300"></polygon>
-                                <polygon fill="#666" points="270 450 180 600 360 600"></polygon>
-                                <polygon fill="#AAA" points="270 450 360 300 180 300"></polygon>
-                                <polygon fill="#DDD" points="450 450 360 600 540 600"></polygon>
-                                <polygon fill="#999" points="450 450 540 300 360 300"></polygon>
-                                <polygon fill="#999" points="630 450 540 600 720 600"></polygon>
-                                <polygon fill="#FFF" points="630 450 720 300 540 300"></polygon>
-                                <polygon points="810 450 720 600 900 600"></polygon>
-                                <polygon fill="#DDD" points="810 450 900 300 720 300"></polygon>
-                                <polygon fill="#AAA" points="990 450 900 600 1080 600"></polygon>
-                                <polygon fill="#444" points="990 450 1080 300 900 300"></polygon>
-                                <polygon fill="#222" points="90 750 0 900 180 900"></polygon>
-                                <polygon points="270 750 180 900 360 900"></polygon>
-                                <polygon fill="#DDD" points="270 750 360 600 180 600"></polygon>
-                                <polygon points="450 750 540 600 360 600"></polygon>
-                                <polygon points="630 750 540 900 720 900"></polygon>
-                                <polygon fill="#444" points="630 750 720 600 540 600"></polygon>
-                                <polygon fill="#AAA" points="810 750 720 900 900 900"></polygon>
-                                <polygon fill="#666" points="810 750 900 600 720 600"></polygon>
-                                <polygon fill="#999" points="990 750 900 900 1080 900"></polygon>
-                                <polygon fill="#999" points="180 0 90 150 270 150"></polygon>
-                                <polygon fill="#444" points="360 0 270 150 450 150"></polygon>
-                                <polygon fill="#FFF" points="540 0 450 150 630 150"></polygon>
-                                <polygon points="900 0 810 150 990 150"></polygon>
-                                <polygon fill="#222" points="0 300 -90 450 90 450"></polygon>
-                                <polygon fill="#FFF" points="0 300 90 150 -90 150"></polygon>
-                                <polygon fill="#FFF" points="180 300 90 450 270 450"></polygon>
-                                <polygon fill="#666" points="180 300 270 150 90 150"></polygon>
-                                <polygon fill="#222" points="360 300 270 450 450 450"></polygon>
-                                <polygon fill="#FFF" points="360 300 450 150 270 150"></polygon>
-                                <polygon fill="#444" points="540 300 450 450 630 450"></polygon>
-                                <polygon fill="#222" points="540 300 630 150 450 150"></polygon>
-                                <polygon fill="#AAA" points="720 300 630 450 810 450"></polygon>
-                                <polygon fill="#666" points="720 300 810 150 630 150"></polygon>
-                                <polygon fill="#FFF" points="900 300 810 450 990 450"></polygon>
-                                <polygon fill="#999" points="900 300 990 150 810 150"></polygon>
-                                <polygon points="0 600 -90 750 90 750"></polygon>
-                                <polygon fill="#666" points="0 600 90 450 -90 450"></polygon>
-                                <polygon fill="#AAA" points="180 600 90 750 270 750"></polygon>
-                                <polygon fill="#444" points="180 600 270 450 90 450"></polygon>
-                                <polygon fill="#444" points="360 600 270 750 450 750"></polygon>
-                                <polygon fill="#999" points="360 600 450 450 270 450"></polygon>
-                                <polygon fill="#666" points="540 600 630 450 450 450"></polygon>
-                                <polygon fill="#222" points="720 600 630 750 810 750"></polygon>
-                                <polygon fill="#FFF" points="900 600 810 750 990 750"></polygon>
-                                <polygon fill="#222" points="900 600 990 450 810 450"></polygon>
-                                <polygon fill="#DDD" points="0 900 90 750 -90 750"></polygon>
-                                <polygon fill="#444" points="180 900 270 750 90 750"></polygon>
-                                <polygon fill="#FFF" points="360 900 450 750 270 750"></polygon>
-                                <polygon fill="#AAA" points="540 900 630 750 450 750"></polygon>
-                                <polygon fill="#FFF" points="720 900 810 750 630 750"></polygon>
-                                <polygon fill="#222" points="900 900 990 750 810 750"></polygon>
-                                <polygon fill="#222" points="1080 300 990 450 1170 450"></polygon>
-                                <polygon fill="#FFF" points="1080 300 1170 150 990 150"></polygon>
-                                <polygon points="1080 600 990 750 1170 750"></polygon>
-                                <polygon fill="#666" points="1080 600 1170 450 990 450"></polygon>
-                                <polygon fill="#DDD" points="1080 900 1170 750 990 750"></polygon>
-                            </g>
-                        </pattern>
-                    </defs>
-                    <rect x="0" y="0" fill="url(#a)" width="100%" height="100%"></rect>
-                    <rect x="0" y="0" fill="url(#b)" width="100%" height="100%"></rect>
-                </svg></div>
-            <div class="card__avatar">
-                <% if(user.gender==="male" ){ %>
-                    <img src="/images/user.png" alt="No Source">
-                    <% } else if(user.gender==="female" ) {%>
-                        <img src="/images/woman.png" alt="No Source">
-                        <% } else {%>
-                            <img src="/images/Uknown Person png.png" alt="No Source">
-                            <% }%>
-            </div>
-            <div class="card__title">
-                <%= user.username%>
-            </div>
-            <!-- loop on User roles -->
-            <div class="card__subtitle">
-                (
-                <% userRoles.forEach((role)=> {%>
-                    <span>
-                        <%= role%>
-                    </span>
-                    <% })%>
-                        )
-            </div>
-            <div class="card_job">
-                <p>
-                    <%= user.job ? user.job : "No job specified" %>
-                </p>
-            </div>
-            <div class="delete">
-                <form action="/user/<%= user._id %>" method="POST">
-                    <button type="submit" class="delete_btn">Delete</button>
-                </form>
-            </div>
-        </div>
-    </div>
-    <%- include('./components/footer.ejs')%>
+        <% } %>
+            <!-- Here goes Navbar -->
+            <nav class="navbar navbar-expand-lg bg-light py-3">
+                <div class=" container">
+                    <a class="navbar-brand d-flex align-items-center gap-2 text-dark" href="/">
+                        <div style="width: 1rem; height: 1rem;">
+                            <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                            </svg>
+                        </div>
+                        <h2 class="text-dark fs-5 fw-bold mb-0">TaskMaster</h2>
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main"
+                        aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa-solid fa-list-ul"></i>
+                    </button>
+                    <div class="collapse navbar-collapse mt-3 justify-content-lg-end gap-lg-3" id="main">
+                        <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/">Home</a>
+                        <a class="btn btn-custom-blue rounded-pill my-1" href="/login">Login</a>
+                        <a class="btn btn-custom-blue rounded-pill my-1" href="/register">Register</a>
+                    </div>
+                </div>
+            </nav>
+            <!-- Here ends Navbar -->
+            <% if(users===null){%>
+                <div style="height: 100vh; display: flex; justify-content: center; align-items: center;">
+                    <h1 style="font-size: 3rem; font-weight: bold;">Hello, there!</h1>
+                </div>
+                <% }%>
+                    <% if(users!==null){%>
+                        <div class="cards_container my-4">
+                            <% users.forEach(user=> { %>
+                                <div class="card_wrapper">
+                                    <div class="card">
+                                        <div class="card__img"><svg xmlns="http://www.w3.org/2000/svg" width="100%">
+                                                <rect fill="#ffffff" width="540" height="450"></rect>
+                                                <defs>
+                                                    <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="0" x2="0"
+                                                        y1="0" y2="100%" gradientTransform="rotate(222,648,379)">
+                                                        <stop offset="0" stop-color="#ffffff"></stop>
+                                                        <stop offset="1" stop-color="#FC726E"></stop>
+                                                    </linearGradient>
+                                                    <pattern patternUnits="userSpaceOnUse" id="b" width="300"
+                                                        height="250" x="0" y="0" viewBox="0 0 1080 900">
+                                                        <g fill-opacity="0.5">
+                                                            <polygon fill="#444" points="90 150 0 300 180 300">
+                                                            </polygon>
+                                                            <polygon points="90 150 180 0 0 0"></polygon>
+                                                            <polygon fill="#AAA" points="270 150 360 0 180 0">
+                                                            </polygon>
+                                                            <polygon fill="#DDD" points="450 150 360 300 540 300">
+                                                            </polygon>
+                                                            <polygon fill="#999" points="450 150 540 0 360 0">
+                                                            </polygon>
+                                                            <polygon points="630 150 540 300 720 300"></polygon>
+                                                            <polygon fill="#DDD" points="630 150 720 0 540 0">
+                                                            </polygon>
+                                                            <polygon fill="#444" points="810 150 720 300 900 300">
+                                                            </polygon>
+                                                            <polygon fill="#FFF" points="810 150 900 0 720 0">
+                                                            </polygon>
+                                                            <polygon fill="#DDD" points="990 150 900 300 1080 300">
+                                                            </polygon>
+                                                            <polygon fill="#444" points="990 150 1080 0 900 0">
+                                                            </polygon>
+                                                            <polygon fill="#DDD" points="90 450 0 600 180 600">
+                                                            </polygon>
+                                                            <polygon points="90 450 180 300 0 300"></polygon>
+                                                            <polygon fill="#666" points="270 450 180 600 360 600">
+                                                            </polygon>
+                                                            <polygon fill="#AAA" points="270 450 360 300 180 300">
+                                                            </polygon>
+                                                            <polygon fill="#DDD" points="450 450 360 600 540 600">
+                                                            </polygon>
+                                                            <polygon fill="#999" points="450 450 540 300 360 300">
+                                                            </polygon>
+                                                            <polygon fill="#999" points="630 450 540 600 720 600">
+                                                            </polygon>
+                                                            <polygon fill="#FFF" points="630 450 720 300 540 300">
+                                                            </polygon>
+                                                            <polygon points="810 450 720 600 900 600"></polygon>
+                                                            <polygon fill="#DDD" points="810 450 900 300 720 300">
+                                                            </polygon>
+                                                            <polygon fill="#AAA" points="990 450 900 600 1080 600">
+                                                            </polygon>
+                                                            <polygon fill="#444" points="990 450 1080 300 900 300">
+                                                            </polygon>
+                                                            <polygon fill="#222" points="90 750 0 900 180 900">
+                                                            </polygon>
+                                                            <polygon points="270 750 180 900 360 900"></polygon>
+                                                            <polygon fill="#DDD" points="270 750 360 600 180 600">
+                                                            </polygon>
+                                                            <polygon points="450 750 540 600 360 600"></polygon>
+                                                            <polygon points="630 750 540 900 720 900"></polygon>
+                                                            <polygon fill="#444" points="630 750 720 600 540 600">
+                                                            </polygon>
+                                                            <polygon fill="#AAA" points="810 750 720 900 900 900">
+                                                            </polygon>
+                                                            <polygon fill="#666" points="810 750 900 600 720 600">
+                                                            </polygon>
+                                                            <polygon fill="#999" points="990 750 900 900 1080 900">
+                                                            </polygon>
+                                                            <polygon fill="#999" points="180 0 90 150 270 150">
+                                                            </polygon>
+                                                            <polygon fill="#444" points="360 0 270 150 450 150">
+                                                            </polygon>
+                                                            <polygon fill="#FFF" points="540 0 450 150 630 150">
+                                                            </polygon>
+                                                            <polygon points="900 0 810 150 990 150"></polygon>
+                                                            <polygon fill="#222" points="0 300 -90 450 90 450">
+                                                            </polygon>
+                                                            <polygon fill="#FFF" points="0 300 90 150 -90 150">
+                                                            </polygon>
+                                                            <polygon fill="#FFF" points="180 300 90 450 270 450">
+                                                            </polygon>
+                                                            <polygon fill="#666" points="180 300 270 150 90 150">
+                                                            </polygon>
+                                                            <polygon fill="#222" points="360 300 270 450 450 450">
+                                                            </polygon>
+                                                            <polygon fill="#FFF" points="360 300 450 150 270 150">
+                                                            </polygon>
+                                                            <polygon fill="#444" points="540 300 450 450 630 450">
+                                                            </polygon>
+                                                            <polygon fill="#222" points="540 300 630 150 450 150">
+                                                            </polygon>
+                                                            <polygon fill="#AAA" points="720 300 630 450 810 450">
+                                                            </polygon>
+                                                            <polygon fill="#666" points="720 300 810 150 630 150">
+                                                            </polygon>
+                                                            <polygon fill="#FFF" points="900 300 810 450 990 450">
+                                                            </polygon>
+                                                            <polygon fill="#999" points="900 300 990 150 810 150">
+                                                            </polygon>
+                                                            <polygon points="0 600 -90 750 90 750"></polygon>
+                                                            <polygon fill="#666" points="0 600 90 450 -90 450">
+                                                            </polygon>
+                                                            <polygon fill="#AAA" points="180 600 90 750 270 750">
+                                                            </polygon>
+                                                            <polygon fill="#444" points="180 600 270 450 90 450">
+                                                            </polygon>
+                                                            <polygon fill="#444" points="360 600 270 750 450 750">
+                                                            </polygon>
+                                                            <polygon fill="#999" points="360 600 450 450 270 450">
+                                                            </polygon>
+                                                            <polygon fill="#666" points="540 600 630 450 450 450">
+                                                            </polygon>
+                                                            <polygon fill="#222" points="720 600 630 750 810 750">
+                                                            </polygon>
+                                                            <polygon fill="#FFF" points="900 600 810 750 990 750">
+                                                            </polygon>
+                                                            <polygon fill="#222" points="900 600 990 450 810 450">
+                                                            </polygon>
+                                                            <polygon fill="#DDD" points="0 900 90 750 -90 750">
+                                                            </polygon>
+                                                            <polygon fill="#444" points="180 900 270 750 90 750">
+                                                            </polygon>
+                                                            <polygon fill="#FFF" points="360 900 450 750 270 750">
+                                                            </polygon>
+                                                            <polygon fill="#AAA" points="540 900 630 750 450 750">
+                                                            </polygon>
+                                                            <polygon fill="#FFF" points="720 900 810 750 630 750">
+                                                            </polygon>
+                                                            <polygon fill="#222" points="900 900 990 750 810 750">
+                                                            </polygon>
+                                                            <polygon fill="#222" points="1080 300 990 450 1170 450">
+                                                            </polygon>
+                                                            <polygon fill="#FFF" points="1080 300 1170 150 990 150">
+                                                            </polygon>
+                                                            <polygon points="1080 600 990 750 1170 750"></polygon>
+                                                            <polygon fill="#666" points="1080 600 1170 450 990 450">
+                                                            </polygon>
+                                                            <polygon fill="#DDD" points="1080 900 1170 750 990 750">
+                                                            </polygon>
+                                                        </g>
+                                                    </pattern>
+                                                </defs>
+                                                <rect x="0" y="0" fill="url(#a)" width="100%" height="100%"></rect>
+                                                <rect x="0" y="0" fill="url(#b)" width="100%" height="100%"></rect>
+                                            </svg></div>
+                                        <div class="card__avatar">
+                                            <% if(user.gender==="male" ){ %>
+                                                <img src="/images/user.png" alt="No Source">
+                                                <% } else if(user.gender==="female" ) {%>
+                                                    <img src="/images/woman.png" alt="No Source">
+                                                    <% } else {%>
+                                                        <img src="/images/Uknown Person png.png" alt="No Source">
+                                                        <% }%>
+                                        </div>
+                                        <div class="card__title">
+                                            <%= user.username%>
+                                        </div>
+                                        <!-- loop on User roles -->
+                                        <div class="card__subtitle">
+                                            (
+                                            <% userRolesArr[0].forEach((role)=> {%>
+                                                <span>
+                                                    <%= role%>
+                                                </span>
+                                                <% })%>
+                                                    <% userRolesArr.shift()%>
+                                                        )
+                                        </div>
+                                        <div class="card_job">
+                                            <p>
+                                                <%= user.job ? user.job : "No job specified" %>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <% })%>
+                        </div>
+                        <% }%>
+                            <%- include('./components/footer.ejs')%>
+                                <script src="/main.js"></script>
+                                <script src="/js/all.min.js"></script>
+                                <script src="/js/bootstrap.bundle.min.js"></script>
+                                <script src="/js/main.js"></script>
 </body>
 
 </html>

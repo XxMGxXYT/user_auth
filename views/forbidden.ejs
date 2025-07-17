@@ -5,31 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Access denied</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <h1><a href="/">Logo</a></h1>
+    <!-- Here goes Navbar -->
+    <nav class="navbar navbar-expand-lg bg-light py-3">
+        <div class=" container">
+            <a class="navbar-brand d-flex align-items-center gap-2 text-dark" href="/">
+                <div style="width: 1rem; height: 1rem;">
+                    <svg viewBox="0 0 48 48" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path>
+                    </svg>
+                </div>
+                <h2 class="text-dark fs-5 fw-bold mb-0">TaskMaster</h2>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main"
+                aria-controls="main" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa-solid fa-list-ul"></i>
+            </button>
+            <div class="collapse navbar-collapse mt-3 justify-content-lg-end gap-lg-3" id="main">
+                <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/">Home</a>
+                <a class="btn btn-custom-blue rounded-pill my-1" href="/login">Login</a>
+                <a class="btn btn-custom-blue rounded-pill my-1" href="/register">Register</a>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/login">Login</a></li>
-                <li><a href="/register">Register</a></li>
-                <% if(userLoggedIn){%>
-                    <li><a href="/<%= loggedInUser.username%>">
-                            <%= loggedInUser.username%>
-                        </a></li>
-                    <% }%>
-            </ul>
-        </nav>
-    </header>
+    </nav>
+    <!-- Here ends Navbar -->
     <div class="forbidden">
         <h1>Access forbidden</h1>
     </div>
     <%- include('./components/footer.ejs')%>
+        <script src="/js/all.min.js"></script>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/main.js"></script>
 </body>
 
 </html>
