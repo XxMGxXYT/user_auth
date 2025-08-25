@@ -290,7 +290,7 @@
                     const task = btn.parentNode.parentNode.parentNode;
                     const taskId = task.getAttribute("data-id");
                     try {
-                        const response = await fetch(`http://localhost:3500/user/task/${taskId}`, {
+                        const response = await fetch(`https://user-auth-lac-alpha.vercel.app/user/task/${taskId}`, {
                             method: "DELETE"
                         });
                         if (response.ok) {
@@ -314,7 +314,7 @@
                     }
                 })
                 try {
-                    const response = await fetch(`http://localhost:3500/user/task/${taskId}`, {
+                    const response = await fetch(`https://user-auth-lac-alpha.vercel.app/user/task/${taskId}`, {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json"
@@ -348,7 +348,7 @@
 
             async function updateUserDetails(username, job) {
                 try {
-                    await fetch("http://localhost:3500/user/<%= user._id %>", {
+                    await fetch("https://user-auth-lac-alpha.vercel.app/user/<%= user._id %>", {
                         method: "PUT",
                         headers: {
                             "Content-Type": "application/json"
