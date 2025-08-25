@@ -10,7 +10,7 @@ const logoutHandler = async (req, res, next) => {
     try {
         if (foundUser) {
             res.clearCookie("jwt_refresh", { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 })
-            res.clearCookie("jwt_access", { httpOnly: true, maxAge: 5 * 60 * 1000 })
+            res.clearCookie("jwt_access", { httpOnly: true, maxAge: 15 * 60 * 1000 })
             // Make the refreshToken property empty for the current user
             foundUser.refreshToken = ''
             await foundUser.save()

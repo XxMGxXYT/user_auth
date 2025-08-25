@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/all.min.css">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Users Page</title>
+    <title>User Dashboard</title>
 </head>
 
 <body>
@@ -27,15 +27,26 @@
                 <i class="fa-solid fa-list-ul"></i>
             </button>
             <div class="collapse navbar-collapse mt-3 justify-content-lg-end gap-lg-3" id="main">
+                <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/addtask">Add Task</a>
                 <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/">Home</a>
-                <a class="btn btn-custom-blue rounded-pill my-1" href="/login">Login</a>
-                <a class="btn btn-custom-blue rounded-pill my-1" href="/register">Register</a>
+                <a class="user_link mt-3 mt-lg-0" href="/user/<%= user.username%>">
+                    <div class="user_image">
+                        <% if(user.gender==="male" ){ %>
+                            <img src="/images/user.png" alt="No Source">
+                            <% } else if(user.gender==="female" ) {%>
+                                <img src="/images/woman.png" alt="No Source">
+                                <% } else {%>
+                                    <img src="/images/Uknown Person png.png" alt="No Source">
+                                    <% }%>
+                                        <%= user.username%>
+                    </div>
+                </a>
             </div>
         </div>
     </nav>
     <!-- Here ends Navbar -->
-    <div class="single_card_wrapper">
-        <div class="card">
+    <div class="single_card_wrapper d-flex align-items-start py-3">
+        <div class="card col-12 col-md-10" style="max-width: 1200px">
             <div class="card__img"><svg xmlns="http://www.w3.org/2000/svg" width="100%">
                     <rect fill="#ffffff" width="540" height="450"></rect>
                     <defs>
@@ -122,37 +133,113 @@
                     <rect x="0" y="0" fill="url(#a)" width="100%" height="100%"></rect>
                     <rect x="0" y="0" fill="url(#b)" width="100%" height="100%"></rect>
                 </svg></div>
-            <div class="card__avatar">
-                <% if(user.gender==="male" ){ %>
-                    <img src="/images/user.png" alt="No Source">
-                    <% } else if(user.gender==="female" ) {%>
-                        <img src="/images/woman.png" alt="No Source">
-                        <% } else {%>
-                            <img src="/images/Uknown Person png.png" alt="No Source">
-                            <% }%>
+            <div class="card_options d-flex w-100 p-3 flex-column gap-5 align-items-start">
+                <div class="card__avatar">
+                    <% if(user.gender==="male" ){ %>
+                        <img src="/images/user.png" alt="No Source">
+                        <% } else if(user.gender==="female" ) {%>
+                            <img src="/images/woman.png" alt="No Source">
+                            <% } else {%>
+                                <img src="/images/Uknown Person png.png" alt="No Source">
+                                <% }%>
+                </div>
+                <div class="card__title">
+                    <div class="d-flex gap-3">
+                        <div class="icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <h4>
+                            <%= user.username%>
+                        </h4>
+                    </div>
+                </div>
+                <!-- loop on User roles -->
+                <div class="card__subtitle">
+                    <div class="d-flex gap-3">
+                        <div class="icon">
+                            <i class="fa-regular fa-square-check"></i>
+                        </div>
+                        <h4>(
+                            <% userRoles.forEach((role)=> {%>
+                                <span>
+                                    <%= role%>
+                                </span>
+                                <% })%>
+                                    )
+                        </h4>
+                    </div>
+                </div>
+                <div class="card_job">
+                    <div class="d-flex gap-3">
+                        <div class="icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <h4>
+                            <%= user.job ? user.job : "No job specified" %>
+                        </h4>
+                    </div>
+                </div>
+                <div class="d-flex gap-3 align-items-center w-100 justify-content-between">
+                    <div class="d-flex gap-3 align-items-center">
+                        <form class="gap-3" action="/user/<%= user._id %>" method="POST">
+                            <button type="submit" class="delete_btn">Delete</button>
+                        </form>
+                        <a href="/logout" class="logout_btn">Logout</a>
+                    </div>
+                    <div class="icon edit">
+                        <i class="fa-solid fa-edit"></i>
+                    </div>
+                </div>
             </div>
-            <div class="card__title">
-                <%= user.username%>
+        </div>
+    </div>
+    <div class="edit_popup d-none">
+        <form class="d-flex flex-column gap-4">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" class="form-control" value="<%= user.username %>">
             </div>
-            <!-- loop on User roles -->
-            <div class="card__subtitle">
-                (
-                <% userRoles.forEach((role)=> {%>
-                    <span>
-                        <%= role%>
-                    </span>
-                    <% })%>
-                        )
+            <div class="form-group>
+                <label for=" job">Job</label>
+                <input type="text" minlength="10" maxlength="30" id="job" name="job" class="form-control"
+                    value="<%= user.job ? `${user.job}` : '' %>">
             </div>
-            <div class="card_job">
-                <p>
-                    <%= user.job ? user.job : "No job specified" %>
-                </p>
+            <div class="popup_btns d-flex gap-3 w-100 align-items-center">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <button type="button" class="btn btn-secondary cancel_edit">Cancel</button>
             </div>
-            <div class="delete">
-                <form action="/user/<%= user._id %>" method="POST">
-                    <button type="submit" class="delete_btn">Delete</button>
-                </form>
+        </form>
+    </div>
+    <div class="taskContainer my-3">
+        <div class="container">
+            <div class="row gap-3">
+                <% if (tasks.length===0) { %>
+                    <h3 class="text-center text-dark">No tasks available. Please add a task.</h3>
+                    <% } %>
+                        <% tasks.forEach((task)=> { %>
+                            <div class="task col-12 bg-light d-flex flex-column gap-3 p-3" data-id="<%= task._id %>">
+                                <div class="taskText">
+                                    <h4 class="text-dark fs-5 fw-bold">
+                                        <%= task.title %>
+                                    </h4>
+                                    <p class="taskDesc text-dark my-0">
+                                        <%= task.description %>
+                                    </p>
+                                </div>
+                                <div class="taskButtons d-flex justify-content-between gap-3">
+                                    <div>
+                                        <button class="deleteTask fw-bold">Delete</button>
+                                    </div>
+                                    <div class="taskStatus">
+                                        <% if (task.status) { %>
+                                            ✅
+                                            <% } else { %>
+
+                                                <% } %>
+                                    </div>
+                                </div>
+                            </div>
+                            <% }) %>
             </div>
         </div>
     </div>
@@ -160,6 +247,172 @@
         <script src="/js/all.min.js"></script>
         <script src="/js/bootstrap.bundle.min.js"></script>
         <script src="/js/main.js"></script>
+        <script>
+            const taskStatus = document.querySelectorAll(".taskStatus")
+            const deleteTaskButton = document.querySelectorAll(".deleteTask");
+            // console.log(taskStatus.textContent.trim().length);
+
+            taskStatus.forEach((task) => {
+                if (task.textContent.trim() === "✅") {
+                    task.parentNode.parentNode.querySelector(".taskDesc").style.textDecoration = "line-through";
+                    task.parentNode.parentNode.querySelector(".taskDesc").style.opacity = "0.6";
+                    task.parentNode.parentNode.querySelector("h4").style.textDecoration = "line-through";
+                    task.parentNode.parentNode.querySelector("h4").style.opacity = "0.8";
+                } else {
+                    task.parentNode.parentNode.querySelector(".taskDesc").style.textDecoration = "none";
+                    task.parentNode.parentNode.querySelector(".taskDesc").style.opacity = "1";
+                    task.parentNode.parentNode.querySelector("h4").style.textDecoration = "none";
+                    task.parentNode.parentNode.querySelector("h4").style.opacity = "1";
+                }
+            })
+
+            taskStatus.forEach((task) => {
+                task.addEventListener("click", () => {
+                    if (task.textContent.trim() === "✅") {
+                        task.textContent = "";
+                        task.parentNode.parentNode.querySelector(".taskDesc").style.textDecoration = "none";
+                        task.parentNode.parentNode.querySelector(".taskDesc").style.opacity = "1";
+                        task.parentNode.parentNode.querySelector("h4").style.textDecoration = "none";
+                        task.parentNode.parentNode.querySelector("h4").style.opacity = "1";
+                        updateStatus(false, task.parentNode.parentNode.getAttribute("data-id"));
+                    } else {
+                        task.textContent = "✅";
+                        task.parentNode.parentNode.querySelector(".taskDesc").style.textDecoration = "line-through";
+                        task.parentNode.parentNode.querySelector(".taskDesc").style.opacity = "0.6";
+                        task.parentNode.parentNode.querySelector("h4").style.textDecoration = "line-through";
+                        task.parentNode.parentNode.querySelector("h4").style.opacity = "0.8";
+                        updateStatus(true, task.parentNode.parentNode.getAttribute("data-id"));
+                    }
+                })
+            })
+            deleteTaskButton.forEach((btn) => {
+                btn.addEventListener("click", async (e) => {
+                    const task = btn.parentNode.parentNode.parentNode;
+                    const taskId = task.getAttribute("data-id");
+                    try {
+                        const response = await fetch(`http://localhost:3500/user/task/${taskId}`, {
+                            method: "DELETE"
+                        });
+                        if (response.ok) {
+                            alert("Task deleted successfully!");
+                            task.remove();
+                            // window.location.reload();
+                        } else {
+                            alert("Failed to delete task. Please try again.");
+                        }
+                    } catch (error) {
+                        console.error("Error:", error);
+                        alert("Error deleting task. Please try again.");
+                    }
+                })
+            })
+            async function updateStatus(status, taskId) {
+                const task = document.querySelectorAll(".task");
+                task.forEach((t) => {
+                    if (t.getAttribute("data-id") === taskId) {
+                        t.classList.add("done");
+                    }
+                })
+                try {
+                    const response = await fetch(`http://localhost:3500/user/task/${taskId}`, {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ status })
+                    });
+                    const data = await response.json();
+                    if (response.ok) {
+                        task.forEach((t) => {
+                            if (t.getAttribute("data-id") === taskId) {
+                                t.classList.remove("done");
+                            }
+                        })
+                        console.log(response);
+                    } else {
+                        console.error("Failed to update task status");
+                    }
+                } catch (error) {
+                    console.error("Error updating task status:", error);
+                    alert("Oops! Something went wrong. Please try again.");
+                    // Refresh the page
+                    window.location.reload();
+                    task.classList.remove("done");
+                }
+            }
+            const edit = document.querySelectorAll(".edit");
+            const editPopupNameInput = document.getElementById("username")
+            const editPopupJobInput = document.getElementById("job");
+            const cancelEdit = document.querySelector(".cancel_edit");
+            const editForm = document.querySelector(".edit_popup form");
+
+            async function updateUserDetails(username, job) {
+                try {
+                    await fetch("http://localhost:3500/user/<%= user._id %>", {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify({ username, job })
+                    });
+                    if (response.ok) {
+                        console.log("User details updated successfully");
+                    } else {
+                        console.error("Failed to update user details");
+                    }
+                } catch (error) {
+                    console.error("Error updating user details:", error);
+                }
+            }
+
+            // Edit button functionality
+            edit.forEach((e) => {
+                e.addEventListener("click", (e) => {
+                    const popup = document.querySelector(".edit_popup");
+                    popup.classList.toggle("d-none");
+                });
+            })
+
+            // Cancel button functionality
+            let nameVal = editPopupNameInput.value
+            let jobVal = editPopupJobInput.value;
+            cancelEdit.addEventListener("click", (e) => {
+                const popup = document.querySelector(".edit_popup");
+                popup.classList.toggle("d-none");
+                editPopupNameInput.value = nameVal;
+                editPopupJobInput.value = jobVal;
+            });
+
+            // Save button functionality
+            editForm.addEventListener("submit", (e) => {
+                e.preventDefault();
+                const popup = document.querySelector(".edit_popup");
+                const username = editPopupNameInput.value;
+                const job = editPopupJobInput.value;
+
+                const cardTitle = document.querySelector(".card__title h4");
+                const cardJob = document.querySelector(".card_job h4");
+                cardTitle.textContent = username;
+                cardJob.textContent = job;
+
+                if (username.length < 3 || username.length > 15) {
+                    alert("Username must be between 3 and 20 characters.");
+                    return;
+                }
+
+                if (job.length < 10 || job.length > 30) {
+                    alert("Job must be between 10 and 20 characters.");
+                    return;
+                }
+
+                // Assuming you have a function to handle the update
+                updateUserDetails(username, job);
+
+                popup.classList.toggle("d-none");
+                // Refresh the page
+                // window.location.reload();
+            });
+        </script>
 </body>
 
 </html>

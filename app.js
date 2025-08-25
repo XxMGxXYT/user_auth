@@ -61,6 +61,7 @@ app.use("/refresh", require("./routes/refreshTokenRoute"));
 
 // app.use(verifyJWT) // JWT middleware
 app.use("/user", verifyJWT, require("./routes/userRoute"));
+app.use("/addtask", verifyJWT, require("./routes/taskPageRoute")); // This route is for the task page
 // app.use("/users/:id", verifyJWT, require("./routes/usersRoute")); // This route is for a specific user
 app.use("/logout", require("./routes/logoutRoute"));
 
@@ -81,8 +82,7 @@ app.use(async (req, res) => {
 })
 
 // This middleware allows only admins to access the routes below
-app.use(verifyRoles(USERS_ROLES.Admin)) // Roles middleware
-app.use("/subdir", require("./routes/route_two"));
+// app.use(verifyRoles(USERS_ROLES.Admin)) // Roles middleware
 
 // Error handler
 app.use((err, req, res, next) => {

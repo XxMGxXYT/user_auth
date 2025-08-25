@@ -340,3 +340,110 @@ Or, if you meant to create an async function, pass `async: true` as an option.
 2025-06-26 00:38:53 - a7e91660-bcab-4d74-8bf5-53d7f6c5975a - MongooseError: Operation `users.find()` buffering timed out after 10000ms
 2025-06-26 00:39:07 - a2346b92-3364-4d37-a5a5-44655cecc635 - MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
 2025-07-13 17:56:13 - 2d961b51-99b3-45f7-8ee8-dae3040731bb - Error: read ECONNRESET
+2025-07-20 18:24:34 - d7439ed9-4402-4d40-8e7b-aa6c44e716a1 - SyntaxError: Missing catch or finally after try in D:\Web Projects\Github_Projects\user_auth\views\users.ejs while compiling ejs
+
+If the above error is not helpful, you may want to try EJS-Lint:
+https://github.com/RyanZim/EJS-Lint
+Or, if you meant to create an async function, pass `async: true` as an option.
+2025-07-20 18:57:30 - 29324c88-69e9-483b-9135-cfb1e2eb354a - ReferenceError: D:\Web Projects\Github_Projects\user_auth\views\user.ejs:31
+    29|             <div class="collapse navbar-collapse mt-3 justify-content-lg-end gap-lg-3" id="main">
+    30|                 <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/">Home</a>
+ >> 31|                 <% if(userLoggedIn && loggedInUser){%>
+    32|                     <a class="user_link" href="/user/<%= loggedInUser.username%>">
+    33|                         <div class="user_image">
+    34|                             <% if(loggedInUser.gender==="male" ){ %>
+
+userLoggedIn is not defined
+2025-07-20 19:03:33 - f6e536a3-05f1-488c-b4d1-f8b73d902919 - ReferenceError: D:\Web Projects\Github_Projects\user_auth\views\user.ejs:31
+    29|             <div class="collapse navbar-collapse mt-3 justify-content-lg-end gap-lg-3" id="main">
+    30|                 <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/">Home</a>
+ >> 31|                 <a class="user_link" href="/user/<%= loggedInUser.username%>">
+    32|                     <div class="user_image">
+    33|                         <% if(user.gender==="male" ){ %>
+    34|                             <img src="/images/user.png" alt="No Source">
+
+loggedInUser is not defined
+2025-07-20 19:04:05 - fecbf39e-8c5f-4a18-9f03-c6e8ef3031f3 - ReferenceError: D:\Web Projects\Github_Projects\user_auth\views\user.ejs:31
+    29|             <div class="collapse navbar-collapse mt-3 justify-content-lg-end gap-lg-3" id="main">
+    30|                 <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/">Home</a>
+ >> 31|                 <a class="user_link" href="/user/<%= loggedInUser.username%>">
+    32|                     <div class="user_image">
+    33|                         <% if(user.gender==="male" ){ %>
+    34|                             <img src="/images/user.png" alt="No Source">
+
+loggedInUser is not defined
+2025-07-20 19:05:29 - 3a55f931-764f-4661-9fd9-15e1c43f9701 - ReferenceError: D:\Web Projects\Github_Projects\user_auth\views\user.ejs:31
+    29|             <div class="collapse navbar-collapse mt-3 justify-content-lg-end gap-lg-3" id="main">
+    30|                 <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/">Home</a>
+ >> 31|                 <a class="user_link" href="/user/<%= loggedInUser.username%>">
+    32|                     <div class="user_image">
+    33|                         <% if(user.gender==="male" ){ %>
+    34|                             <img src="/images/user.png" alt="No Source">
+
+loggedInUser is not defined
+2025-07-20 19:06:24 - b7f46417-b887-402b-8dc7-bbbdc8c6539a - ReferenceError: D:\Web Projects\Github_Projects\user_auth\views\user.ejs:31
+    29|             <div class="collapse navbar-collapse mt-3 justify-content-lg-end gap-lg-3" id="main">
+    30|                 <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/">Home</a>
+ >> 31|                 <a class="user_link" href="/user/<%= loggedInUser.username%>">
+    32|                     <div class="user_image">
+    33|                         <% if(user.gender==="male" ){ %>
+    34|                             <img src="/images/user.png" alt="No Source">
+
+loggedInUser is not defined
+2025-07-20 19:07:42 - 19b51385-7c77-4165-8774-9336a9152f28 - ReferenceError: D:\Web Projects\Github_Projects\user_auth\views\user.ejs:31
+    29|             <div class="collapse navbar-collapse mt-3 justify-content-lg-end gap-lg-3" id="main">
+    30|                 <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/">Home</a>
+ >> 31|                 <a class="user_link" href="/user/<%= loggedInUser.username%>">
+    32|                     <div class="user_image">
+    33|                         <% if(user.gender==="male" ){ %>
+    34|                             <img src="/images/user.png" alt="No Source">
+
+loggedInUser is not defined
+2025-07-20 19:11:31 - 0bd1213c-9358-4755-b8a3-e7e098b4aec0 - ReferenceError: D:\Web Projects\Github_Projects\user_auth\views\user.ejs:31
+    29|             <div class="collapse navbar-collapse mt-3 justify-content-lg-end gap-lg-3" id="main">
+    30|                 <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/">Home</a>
+ >> 31|                 <a class="user_link" href="/user/<%= loggedInUser.username%>">
+    32|                     <div class="user_image">
+    33|                         <% if(user.gender==="male" ){ %>
+    34|                             <img src="/images/user.png" alt="No Source">
+
+loggedInUser is not defined
+2025-07-20 19:14:42 - 14e0fff2-0d74-479f-86e1-7339c10c2c1f - ReferenceError: D:\Web Projects\Github_Projects\user_auth\views\user.ejs:31
+    29|             <div class="collapse navbar-collapse mt-3 justify-content-lg-end gap-lg-3" id="main">
+    30|                 <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/">Home</a>
+ >> 31|                 <a class="user_link" href="/user/<%= loggedInUser.username%>">
+    32|                     <div class="user_image">
+    33|                         <% if(user.gender==="male" ){ %>
+    34|                             <img src="/images/user.png" alt="No Source">
+
+loggedInUser is not defined
+2025-07-20 19:44:32 - 54c6fc75-e93c-48ae-b0c5-e5ed34e064a3 - MongoServerSelectionError: connection <monitor> to 159.41.76.33:27017 timed out
+2025-07-20 19:44:46 - 5f987f8a-9ea0-420e-bb0f-97d85100a7fc - MongoServerSelectionError: connect ETIMEDOUT 159.41.76.33:27017
+2025-07-20 19:44:51 - 5d6de6ec-faa4-448e-b52a-3fb08b1287b5 - MongoServerSelectionError: connect ETIMEDOUT 159.41.76.33:27017
+2025-07-21 21:13:52 - ab0adc9c-df80-405f-bdab-d5ed05d58e01 - MongoServerSelectionError: connect ETIMEDOUT 159.41.76.31:27017
+2025-07-21 21:14:22 - 48fb32c2-fbb2-48f7-b21b-ac275fb34027 - MongoServerSelectionError: connect ETIMEDOUT 159.41.76.31:27017
+2025-07-22 20:12:50 - ae1a6ab7-922a-4ff5-be12-092cd60ea5db - MongoServerSelectionError: connection <monitor> to 159.41.76.33:27017 timed out
+2025-07-22 21:14:20 - 835d9f1c-b7c0-4b53-b224-008cc583cfa2 - MongoServerSelectionError: getaddrinfo ENOTFOUND ac-7melj9b-shard-00-01.oln56s3.mongodb.net
+2025-07-28 14:14:03 - 5c34f68f-a266-4c97-89a6-edeed1a3530b - MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+2025-07-28 15:03:05 - 18c6cb3f-4479-49a7-a004-0f39fbcd4b2a - MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+2025-07-28 15:03:21 - 2c194f7c-37f7-4c33-aa85-e6d898b68d8d - MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+2025-07-28 15:04:22 - 87658649-b545-491c-9a6a-645ce10311bd - MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+2025-07-28 15:04:32 - c561e9a6-8e03-4b1e-9914-60ea04c732cf - MongooseError: Operation `users.findOne()` buffering timed out after 10000ms
+2025-08-05 14:55:22 - ed9343aa-9010-4908-89ef-6977d2989324 - TypeError: Cannot read properties of null (reading 'roles')
+2025-08-05 16:05:24 - b0467461-4aba-4cb4-b5d2-59046de7cda3 - TypeError: Cannot read properties of null (reading 'roles')
+2025-08-05 16:05:39 - b41c1c18-95ab-4892-8fed-070a99ec2a4f - TypeError: Cannot read properties of null (reading 'roles')
+2025-08-05 16:51:15 - 55524a49-ee74-4093-b551-ac36381e30fa - ReferenceError: jwt is not defined
+2025-08-15 12:54:30 - d97f02c9-0bef-40fa-b2ea-e1b9384931c0 - MongoServerSelectionError: connection <monitor> to 159.41.76.31:27017 timed out
+2025-08-17 21:09:59 - ea8dde3a-317f-4a63-b428-b23579f4c3ac - Error: read ECONNRESET
+2025-08-17 22:49:57 - ed909c58-94d4-407a-9ea6-27ee97d09afd - MongoServerSelectionError: connection <monitor> to 159.41.76.31:27017 timed out
+2025-08-17 23:02:28 - 7c84d6f5-87bf-49d3-9c46-28588ab0a276 - Error: read ECONNRESET
+2025-08-17 23:48:59 - 740acf45-0779-4c98-96d2-9e9ea81023a5 - Error: read ECONNRESET
+2025-08-18 00:26:20 - 44885703-ef5f-460d-bb3d-d485b816326a - Error: read ECONNRESET
+2025-08-18 00:34:01 - f2475fc0-ec81-4a2c-83a5-96bd25a38cd5 - MongoServerSelectionError: connection 2 to 159.41.76.31:27017 timed out
+2025-08-24 22:54:05 - f1b9c2ab-f479-42cb-b57e-9434dc9a845a - MongoServerSelectionError: getaddrinfo ENOTFOUND ac-7melj9b-shard-00-00.oln56s3.mongodb.net
+2025-08-24 22:55:18 - 7e0e735d-9cbd-4ff9-af1d-79db9407cbb0 - MongoServerSelectionError: getaddrinfo ENOTFOUND ac-7melj9b-shard-00-00.oln56s3.mongodb.net
+2025-08-24 23:45:40 - 9dd03096-6fab-41ab-9b71-57c1c60d1424 - Error: read ECONNRESET
+2025-08-24 23:46:00 - b42bd693-662b-47ad-aae9-f227e0880922 - MongoServerSelectionError: connection <monitor> to 159.41.76.31:27017 timed out
+2025-08-24 23:46:06 - 3eb38c78-56b5-4c2e-8f69-b084a6a5e63e - MongoServerSelectionError: getaddrinfo ENOTFOUND ac-7melj9b-shard-00-01.oln56s3.mongodb.net
+2025-08-24 23:46:11 - 7b33c706-7a03-4f38-8783-305684e8e79e - MongoServerSelectionError: getaddrinfo ENOTFOUND ac-7melj9b-shard-00-01.oln56s3.mongodb.net
+2025-08-24 23:46:18 - 121db867-906e-4ef5-b0c9-3f2995689c76 - MongoServerSelectionError: getaddrinfo ENOTFOUND ac-7melj9b-shard-00-01.oln56s3.mongodb.net

@@ -28,8 +28,24 @@
             </button>
             <div class="collapse navbar-collapse mt-3 justify-content-lg-end gap-lg-3" id="main">
                 <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/">Home</a>
-                <a class="btn btn-custom-blue rounded-pill my-1" href="/login">Login</a>
-                <a class="btn btn-custom-blue rounded-pill my-1" href="/register">Register</a>
+                <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/users">Users</a>
+                <% if(userLoggedIn && loggedInUser){%>
+                    <a class="user_link mt-3 mt-lg-0" href="/user/<%= loggedInUser.username%>">
+                        <div class="user_image">
+                            <% if(loggedInUser.gender==="male" ){ %>
+                                <img src="/images/user.png" alt="No Source">
+                                <% } else if(loggedInUser.gender==="female" ) {%>
+                                    <img src="/images/woman.png" alt="No Source">
+                                    <% } else {%>
+                                        <img src="/images/Uknown Person png.png" alt="No Source">
+                                        <% }%>
+                                            <%= loggedInUser.username%>
+                        </div>
+                    </a>
+                    <% } else {%>
+                        <a class="btn btn-custom-blue rounded-pill my-1" href="/login">Login</a>
+                        <a class="btn btn-custom-blue rounded-pill my-1" href="/register">Register</a>
+                        <% }%>
             </div>
         </div>
     </nav>

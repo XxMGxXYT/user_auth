@@ -33,8 +33,24 @@
                     </button>
                     <div class="collapse navbar-collapse mt-3 justify-content-lg-end gap-lg-3" id="main">
                         <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/">Home</a>
-                        <a class="btn btn-custom-blue rounded-pill my-1" href="/login">Login</a>
-                        <a class="btn btn-custom-blue rounded-pill my-1" href="/register">Register</a>
+                        <a class="btn btn-custom-blue rounded-pill my-1" aria-current="page" href="/users">Users</a>
+                        <% if(userLoggedIn && loggedInUser){%>
+                            <a class="user_link mt-3 mt-lg-0" href="/user/<%= loggedInUser.username%>">
+                                <div class="user_image">
+                                    <% if(loggedInUser.gender==="male" ){ %>
+                                        <img src="/images/user.png" alt="No Source">
+                                        <% } else if(loggedInUser.gender==="female" ) {%>
+                                            <img src="/images/woman.png" alt="No Source">
+                                            <% } else {%>
+                                                <img src="/images/Uknown Person png.png" alt="No Source">
+                                                <% }%>
+                                                    <%= loggedInUser.username%>
+                                </div>
+                            </a>
+                            <% } else {%>
+                                <a class="btn btn-custom-blue rounded-pill my-1" href="/login">Login</a>
+                                <a class="btn btn-custom-blue rounded-pill my-1" href="/register">Register</a>
+                                <% }%>
                     </div>
                 </div>
             </nav>
@@ -47,7 +63,7 @@
                     <% if(users!==null){%>
                         <div class="cards_container my-4">
                             <% users.forEach(user=> { %>
-                                <div class="card_wrapper">
+                                <div class="card_wrapper text-center">
                                     <div class="card">
                                         <div class="card__img"><svg xmlns="http://www.w3.org/2000/svg" width="100%">
                                                 <rect fill="#ffffff" width="540" height="450"></rect>
@@ -228,7 +244,6 @@
                         </div>
                         <% }%>
                             <%- include('./components/footer.ejs')%>
-                                <script src="/main.js"></script>
                                 <script src="/js/all.min.js"></script>
                                 <script src="/js/bootstrap.bundle.min.js"></script>
                                 <script src="/js/main.js"></script>

@@ -23,7 +23,7 @@ const loginHandler = async (req, res) => {
                 }
             },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: "1m" }
+            { expiresIn: "15m" }
         )
         const refreshToken = jwt.sign(
             { "username": foundUser.username },
@@ -36,7 +36,7 @@ const loginHandler = async (req, res) => {
         await foundUser.save();
         // Create a cookie for storing the Refresh token and access token
         res.cookie("jwt_refresh", refreshToken, { httpOnly: true, maxAge: 24 * 60 * 60 * 1000 }) // 1 day
-        res.cookie("jwt_access", accessToken, { httpOnly: true, maxAge: 5 * 60 * 1000 }) // 5 minutes
+        res.cookie("jwt_access", accessToken, { httpOnly: true, maxAge: 15 * 60 * 1000 }) // 15 minutes
         res.redirect("/user")
     } else {
         res.sendStatus(401) // Unauthorized

@@ -220,6 +220,40 @@ a:focus {
     }
 }
 
+/* Navbar styles */
+
+nav .user_link {
+    padding: 10px 0px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    transition: 0.3s;
+}
+
+nav .user_image {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+nav .user_image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+nav .user_link:hover {
+    color: #0cb9f2;
+    transform: translate(0, -3px);
+}
+
 /* Register part goes here */
 
 .register_form_div {
@@ -396,7 +430,6 @@ footer p {
 
 .single_card_wrapper {
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -412,8 +445,6 @@ footer p {
     --bg-color: #f7f7f7;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     position: relative;
-    /* width: 300px; */
-    height: 384px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -431,15 +462,43 @@ footer p {
     border-radius: 20px 20px 0 0;
 }
 
+.card_options .card__title,
+.card_options .card__subtitle,
+.card_options .card_job,
+.card_options .card__avatar {
+    width: 100%;
+    padding: 5px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.card_options .card__title,
+.card_options .card__subtitle,
+.card_options .card_job {
+    border-bottom: 3px solid #dbdbdb;
+}
+
+.card_options .icon {
+    width: fit-content;
+    padding: 10px 15px;
+    border-radius: 10px;
+    background-color: #dbdbdb;
+}
+
+.card_options .icon:last-child {
+    cursor: pointer;
+}
+
+.card_options .icon:last-child:hover {
+    background-color: #c0c0c0;
+}
+
 .card__avatar {
-    position: absolute;
     width: 114px;
     height: 114px;
     border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: calc(50% - 57px);
 }
 
 .card__avatar img {
@@ -447,28 +506,15 @@ footer p {
     height: 100px;
 }
 
-.card__title {
-    margin-top: 60px;
-    font-weight: 500;
-    font-size: 18px;
-    color: var(--main-color);
-}
 
-.card__subtitle {
-    margin-top: 20px;
-    font-weight: 400;
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5px;
-    color: var(--submain-color);
+.card__title {
+    font-weight: 500;
+    color: var(--main-color);
 }
 
 .card_job {
     margin-top: 6px;
     width: 100%;
-    text-align: center;
 }
 
 .card_job p {
@@ -478,9 +524,6 @@ footer p {
 }
 
 .delete_btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
     background-color: #ff4d4d;
     color: white;
     border: none;
@@ -491,6 +534,108 @@ footer p {
 
 .delete_btn:hover {
     background-color: #ff1a1a;
+}
+
+.logout_btn {
+    background-color: #dbdbdb;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.logout_btn:hover {
+    background-color: #b3b3b3;
+    color: #000;
+}
+
+.edit_popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.edit_popup form {
+    width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.task_container {
+    width: 100%;
+    height: 100vh;
+}
+
+.task_container form div {
+    width: 100%;
+    max-width: 450px;
+    font-size: 1.2rem;
+    color: #000;
+}
+
+.task_container form div label {
+    width: fit-content;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.task_container form textarea {
+    resize: none;
+}
+
+.taskButtons .deleteTask {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.taskButtons .deleteTask:hover {
+    background-color: #ff1a1a;
+}
+
+.taskButtons .update {
+    background-color: #dbdbdb;
+    color: #000;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.taskButtons .update:hover {
+    background-color: #b3b3b3;
+    color: #000;
+}
+
+.taskStatus {
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 10px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.done {
+    pointer-events: none;
 }
 
 /* One user card */

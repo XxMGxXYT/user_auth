@@ -22,10 +22,10 @@ const refreshTokenHandler = async (req, res) => {
                 }
             },
             process.env.ACCESS_TOKEN_SECRET,
-            { expiresIn: "1m" }
+            { expiresIn: "15m" }
         )
-        res.cookie("jwt_access", newAccessToken, { httpOnly: true, maxAge: 5 * 60 * 1000 }) // 5 minutes
-        res.redirect("/user")
+        res.cookie("jwt_access", newAccessToken, { httpOnly: true, maxAge: 15 * 60 * 1000 }) // 15 minutes
+        res.redirect("/user");
     })
 }
 
