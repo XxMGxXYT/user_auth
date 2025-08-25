@@ -37,6 +37,7 @@ app.use(express.json()) // for parsing application/json
 app.use(cookieParser()) // for parsing cookies
 
 // Sets the template langauge
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 // Middleware
